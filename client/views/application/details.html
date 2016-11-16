@@ -1,0 +1,2482 @@
+<template name="details">
+
+    <div class="modal-open" style="padding-right: 15px;">
+            <header id="header">
+            <div class="container">
+                <div class="header-inner clearfix">
+                    <div class="header-branding">
+                        <a href="https://lok-iz.com/index.php">
+                            <img src="./details_files/lokiz.png" alt="Lok-iz location immobilière">
+                        </a>
+                    </div>
+                    <div class="header-navbar">
+                        <div class="header-tools">
+                            <div class="header-login">
+                                <a href="https://lok-iz.com/index.php?action=contact">
+                                    <button style="margin-top:5%;" class="login-toggle header-btn"> Nous contacter
+                                    </button>
+                                </a>
+                            </div>
+                            <div class="header-login">
+                                <a href="https://lok-iz.com/index.php">
+                                    <button class="login-toggle header-btn"><i class="fa fa-home"></i> Accueil</button>
+                                </a>
+                            </div>
+                            <div class="header-login" style="display:none;">
+                                <a href="https://lok-iz.com/index.php?action=board">
+                                    <button class="login-toggle header-btn"><i class="fa fa-tachometer"></i> Tableau de
+                                        bord
+                                    </button>
+                                </a>
+                            </div>
+                            <div class="header-login" style="display:none;">
+                                <a href="https://lok-iz.com/index.php?action=deconnexion">
+                                    <button class="login-toggle header-btn"><i class="fa fa-power-off"></i> Se
+                                        déconnecter
+                                    </button>
+                                </a>
+                            </div>
+                            <div class="header-login">
+                                <button class="login-toggle header-btn"><i class="fa fa-plus-circle"></i> S'inscrire
+                                </button>
+                                <div class="header-form" style="display: none;">
+                                    <div class="default-form">
+                                        <a href="https://lok-iz.com/index.php?action=inscriptionLocataire" style="display:block; margin: 5px">Trouvez votre logement</a>
+                                        <a href="https://lok-iz.com/index.php?action=inscriptionProprietaire" style="display:block; margin: 5px">Postez une annonce immobilière</a>
+                                        <a href="https://lok-iz.com/index.php?action=inscriptionParrain" style="display:block; margin: 5px">Gagnez des primes</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="header-login">
+                                <button class="login-toggle header-btn"><i class="fa fa-power-off"></i> Se connecter
+                                </button>
+                                <div class="header-form" style="display: none;">
+                                    <form action="https://lok-iz.com/index.php?action=connexion" method="post" class="default-form">
+                                        <p class="alert-message warning"><i class="ico fa fa-exclamation-circle"></i>
+                                            Remplissez correctement les champs ! <i class="fa fa-times close"></i>
+                                        </p>
+                                        <p class="form-row">
+                                            <a href="https://lok-iz.com/index.php?action=mdpOublie">Mot de passé oublié ?</a>
+                                            <input class="email" type="text" placeholder="Email" name="email">
+                                        </p>
+                                        <p class="form-row">
+                                            <input type="password" placeholder="Mot de passe" name="password">
+                                        </p>
+                                        <p class="form-row">
+                                            <button class="submit-btn button"><i class="fa fa-power-off"></i> Se
+                                                connecter
+                                            </button>
+                                        </p>
+                                    </form>
+                                </div>
+                            </div>
+                                                            <span class="header-add-offer">
+              <a data-toggle="modal" data-target="#modalDepAnnonce" class="button" style="margin-top:20px;"><i class="fa fa-plus"></i> Déposer une annonce</a>
+            </span>
+                                                                                    &nbsp;
+                            <a href="https://lok-iz.com/index.php?action=fr"><img src="./details_files/french-flag.gif" alt="french flag"></a> -
+                            <a href="https://lok-iz.com/index.php?action=en"><img src="./details_files/english-flag.gif" alt="english flag"></a>
+                        </div>
+
+                    </div>
+                    <button class="navbar-toggle button"><i class="fa fa-bars"></i></button>
+
+                </div>
+
+            </div>
+        </header>
+    
+            <div id="contenu" class=""><script>
+
+	function getTimeRemaining(endtime){
+	  var t = Date.parse(endtime) - Date.parse(new Date());
+	  
+	  var seconds = Math.floor( (t/1000) % 60 );
+	  var minutes = Math.floor( (t/1000/60) % 60 );
+	  var hours = Math.floor( (t/(1000*60*60)) % 24 );
+	  var days = Math.floor( t/(1000*60*60*24) );
+	  return {
+	    'total': t,
+	    'days': days,
+	    'hours': hours,
+	    'minutes': minutes,
+	    'seconds': seconds
+	  };
+	}
+
+</script>
+
+<!-- BEGIN : VERSION EN -->
+<div id="core" class="page-search-results">
+
+
+
+
+<!-- PAGE HEADER : begin -->
+
+<!-- PAGE HEADER : end -->
+
+<!-- MAIN WRAPPER : begin -->
+<div class="main-wrapper-container" style="background: #f7f7f7; padding-bottom: 0px ">
+	<div class="container container-white" style="width: 100%; margin-top: -3%; padding-right: 0">
+		    		  
+   		
+		<div id="main-wrapper" class="main-wrapper--custom">
+			<div id="results" class="row" style="margin-right: 0">
+				<div id="listAnnonces" class="col-md-12 list-annonces" style="padding-right: 0; margin-left: 0;">
+					
+					<div class="container container-grey" style="box-shadow: 0 1px 3px 0px #777 !important;width: 102%;margin-left: -14px;background: #e5e5e5; border-bottom: 3px solid #d5096f; padding-left: 8.33%;">
+						<div class="banner-search banner-search-inner" style="position: initial">
+							
+							<div class="custom-list tab-title-list clearfix">
+                                <li class="tab-title active"><a href="https://lok-iz.com/index.php?action=rechercheSimple">Offres</a></li>
+                                <li class="tab-title"><a href="https://lok-iz.com/index.php?action=rechercheDemande">Demandes</a></li>
+    						</div>
+    						<ul class="custom-list tab-content-list">
+
+    							<!-- SWAP : begin -->
+    							<li id="formLocation" class="tab-content active">
+									
+    								<form class="default-form" action="https://lok-iz.com/index.php?action=rechercheSimple" method="post">
+    									<div class="row">
+    										<div class="col-sm-10">
+		    									<div class="row">
+		    										<div class="col-sm-4">
+														<select class="regions" name="idRegion" placeholder="Pas de région pour ce code postal !" style="height: 41px;">
+														<option value="0">Région</option>													<option value="1">Alsace</option><option value="2">Aquitaine</option><option value="3">Auvergne</option><option value="4">Basse Normandie</option><option value="5">Bourgogne</option><option value="6">Bretagne</option><option value="7">Centre</option><option value="8">Champagne Ardenne</option><option value="9">Corse</option><option value="10">Franche Comte</option><option value="11">Haute Normandie</option><option value="12">Ile de France</option><option value="13">Languedoc Roussillon</option><option value="14">Limousin</option><option value="15">Lorraine</option><option value="16">Midi-Pyrénées</option><option value="17">Nord Pas de Calais</option><option value="18">Provence Alpes Côte d'Azur</option><option value="19">Pays de la Loire</option><option value="20">Picardie</option><option value="21">Poitou Charente</option><option value="22">Rhone Alpes</option></select>
+													<input type="hidden" value="" name="regionName">
+													</div>
+													<div class="col-sm-4">
+														<select class="departements" name="idDepartement" style="height: 41px;" placeholder="Pas de département pour ce code postal !">
+															<option value="0">Département</option>														</select>
+														<input type="hidden" value="" name="departementName">
+													</div>
+			    									<div class="col-sm-3 "> 
+			    										<select id="typeRecherche" name="typeRecherche" class="" style="height: 41px;">
+															<option class="tab-title" value="Louer" selected="">Louer</option>
+															<option class="tab-title" value="Acheter">Acheter</option>
+														</select>	
+			    									</div>
+												</div>		
+
+	    									<!-- <span class="select-box type2-search">
+	    										<select class="regions" name="idRegion" placeholder="Pas de région pour ce code postal !">
+	    											<option value="0">Région</option>
+	    										</select>
+	    										<input type="hidden" value="" name="regionName">
+	    									</span> -->
+	    									<!-- ARRIVAL DATE : end -->
+
+	    									<!-- DEPARTURE DATE : begin -->
+	    									<!-- <span class="select-box type2-search">
+	    										<select class="departements" name="idDepartement" placeholder="Pas de département pour ce code postal !">
+	    											<option value="0">Département</option>
+	    										</select>
+	    										<input type="hidden" value="" name="departementName">
+	    									</span> -->
+	    									<!-- DEPARTURE DATE : end -->
+
+		    									<!-- ADULTS : begin -->
+		    									<div class="row">
+		    										<br>
+		    										<div class="col-sm-4">
+			    									<span class="select-box" style="display:none"><input class="value-holder" type="text" disabled="disabled" placeholder="Ville"><i class="fa fa-chevron-down"></i><ul class="select-clone custom-list" style=""><li data-value="0">Ville</li></ul>
+			    										<select class="villes" name="idVille" placeholder="Pas de ville pour ce code postal !">
+			    											<option value="0">Ville</option>
+			    										</select>
+			    										<input type="hidden" value="" name="villeName">
+			    									</span>	
+			    									<select name="typeBien" style="height: 41px;">
+			    											<option value="">Type de bien</option>
+			                                                <option value="6">Studio</option>
+			    											<option value="1">Appartement</option><option value="2">Maison</option><option value="3">Chambre chez l'habitant</option><option value="5">Parking</option><option value="4">Terrain</option>			    										</select>
+
+			    									</div>
+			    									<div class="col-sm-4">
+			    									
+			    										<select name="typeBail" style="height: 41px;">
+			    											<option value="">Type de bail</option>
+			    											<option value="1">Bail nu</option><option value="2">Bail meublé</option><option value="3">Saisonnier</option>			    										</select>
+			    									
+			    									</div>	
+			    									<div class="col-sm-3">
+			    										<a class="" data-toggle="modal" data-target="#modalRechAff">&gt; Plus de critères</a>
+			    									</div>	
+		    									</div>
+	    									</div>
+	    									<div class="col-sm-2">
+	    										<span class="submit-btn">
+		    										<button class="button"><i class="fa fa-search"></i> OK</button>
+		    									</span>
+	    									</div>
+    									</div>
+    									
+
+    									<!-- SUBMIT : begin -->
+    									<br>
+    									<p class="">
+											<span class="checkbox-input">
+												<input id="commission" type="checkbox" class="required" name="commission">
+												<label for="commission" style="width: auto">Afficher seulement les annonces avec commission</label>
+											</span>
+		                                </p>
+                                        <input type="hidden" name="annonceTypes[]" value="0">
+    									
+    									<!-- SUBMIT : end -->
+
+    								</form>
+    								<br>
+    								
+    								
+    							</li>
+    							<!-- SWAP : end -->
+                                <li id="formAchat" style="display: none">
+
+                                <form class="default-form" action="https://lok-iz.com/index.php?action=rechercheSimple" method="post">
+									
+
+									<div class="row">
+									<div class="col-sm-10">
+									
+									<div class="row">
+										<div class="col-sm-4">
+											<select class="regions" name="idRegion" placeholder="Pas de région pour ce code postal !" style="height: 41px;">
+											<option value="0">Région</option>										<option value="1">Alsace</option><option value="2">Aquitaine</option><option value="3">Auvergne</option><option value="4">Basse Normandie</option><option value="5">Bourgogne</option><option value="6">Bretagne</option><option value="7">Centre</option><option value="8">Champagne Ardenne</option><option value="9">Corse</option><option value="10">Franche Comte</option><option value="11">Haute Normandie</option><option value="12">Ile de France</option><option value="13">Languedoc Roussillon</option><option value="14">Limousin</option><option value="15">Lorraine</option><option value="16">Midi-Pyrénées</option><option value="17">Nord Pas de Calais</option><option value="18">Provence Alpes Côte d'Azur</option><option value="19">Pays de la Loire</option><option value="20">Picardie</option><option value="21">Poitou Charente</option><option value="22">Rhone Alpes</option></select>
+										<input type="hidden" value="" name="regionName">
+										</div>
+										<div class="col-sm-4">
+											<select class="departements" name="idDepartement" style="height: 41px;" placeholder="Pas de département pour ce code postal !">
+												<option value="0">Département</option>											</select>
+											<input type="hidden" value="" name="departementName">
+										</div>
+
+										<div class="col-sm-3">
+    										<select id="typeRecherche2" name="typeRecherche" class="" style="height: 41px;">
+    											<option class="tab-title" value="Acheter" selected="">Acheter</option>
+												<option class="tab-title" value="Louer">Louer</option>
+											</select>	
+    									</div>
+
+    									
+									</div>
+
+									
+    									<!-- <span class="select-box type2-search">
+    										<select class="regions" name="idRegion" placeholder="Pas de région pour ce code postal !">
+                                                <option value="0">Région</option>
+                                            </select>
+    										<input type="hidden" value="" name="regionName">
+    									</span> -->
+                                    <!-- ARRIVAL DATE : end -->
+
+                                    <!-- DEPARTURE DATE : begin -->
+    									<!-- <span class="select-box type2-search">
+    										<select class="departements" name="idDepartement" placeholder="Pas de département pour ce code postal !">
+                                                <option value="0">Département</option>
+                                            </select>
+    										<input type="hidden" value="" name="departementName">
+    									</span> -->
+                                    <!-- DEPARTURE DATE : end -->
+
+                                    <!-- ADULTS : begin -->
+    									<div class="row">
+	    									<br>
+	    									<div class="col-sm-4" style="display: none">
+	    										<select class="villes" name="idVille" placeholder="Pas de ville pour ce code postal !" style="height: 41px;">
+	                                                <option value="0">Ville</option>
+	                                            </select>
+	    										<input type="hidden" value="" name="villeName">
+	    									</div>
+
+	                                    <!-- SEARCH INPUT : begin -->
+	                                    <!--<span class="search-input">
+	                                        <input class="codePostal" type="text" name="codePostal" placeholder="Code postal" pattern="^[0-9]{5,5}$">
+	                                    </span> -->
+	                                    <!-- SEARCH INPUT : end -->
+
+	                                    <!-- CHILDREN : begin -->
+	    									<div class="col-sm-4">
+	    										<select name="typeBien" style="height: 41px;">
+	                                                <option value="">Type de bien</option>
+	                                                <option value="1">Appartement</option><option value="2">Maison</option><option value="3">Chambre</option><option value="6">Studio</option><option value="5">Parking</option><option value="4">Terrain</option>	                                            </select>
+	                                        </div>
+	                                        <div class="col-sm-4">
+	                                        </div>
+	                                        <div class="col-sm-3">
+	    										<a class="" data-toggle="modal" data-target="#modalRechAff">&gt; Plus de critères</a>
+	    									</div>	
+    									</div>
+
+									
+									</div>
+									<div class="col-sm-2">
+	    										<span class="submit-btn">
+		    										<button class="button"><i class="fa fa-search"></i> OK</button>
+		    									</span>
+	    									</div>
+    								</div>	
+    										<input type="hidden" name="typeBail" value="1">
+                                    <!-- CHILDREN : end -->
+
+                                    <!-- SUBMIT : begin -->
+									<p class="">
+										<span class="checkbox-input">
+											<input id="commission" type="checkbox" class="required" name="commission">
+											<label for="commission" style="width: auto">Afficher seulement les annonces avec commission</label>
+										</span>
+	                                </p>
+                                    <br>
+                                    <input type="hidden" name="annonceTypes[]" value="1">
+    									
+                                    <!-- SUBMIT : end -->
+
+                                </form>
+                                
+                                </li>
+
+
+    						</ul>
+    					</div>
+    					
+					</div>
+					<br>
+					<!-- PROPERTIES LISTING : begin -->
+					<div class="properties-listing" style="padding-left: 8.33%;">
+						
+						<!-- PROPERTIES LISTING HEADER : end -->
+												
+							<!-- PROPERTY LIST : begin -->
+							<ul class="custom-list clearfix property-list layout-list">
+
+								
+									<!-- PROPERTY 1 : begin -->
+									<div class="col-sm-12 col-list-annonce">
+										<li class="property first-in-row odd">
+
+											<div class="row">
+												
+												<div class="col-sm-5">
+													<a onclick="viewAnnonce(3653)" class="property-thumb">
+														<img src="./details_files/photo_1.png" alt="">
+														<span class="overlay"><span><i class="fa fa-search"></i> Voir plus</span></span>
+													</a> 
+																									</div>
+
+												<div class="col-sm-6">
+													<div class="property-head">
+																																													<h3 class="property-title"><a onclick="viewAnnonce(3653)">Appartement - T2 / <span style="color:#D5096F">38m2</span></a></h3>
+																																														                                                <h5 class="property-location dateParution">Publié le 15/11 à 16h45</h5>
+			                                            													</div>
+													<div class="property-content">
+											
+                                           
+										<div class="row">
+											<div class="col-md-5">
+												 <h4 style="overflow: hidden;white-space: nowrap;text-overflow: ellipsis; width: 100%;color: #D5096F">Paris 75018</h4>
+										                                            <h5 class="property-location">Bail nu</h5>
+                                            										<br>
+												<!-- <h5 class="property-location" style="color:#D5096F">Surface : 38m2</h5> -->
+											<!-- <h5 class="property-location">A proximité : </h5> -->
+											</div>
+											<div class="col-md-6">
+												
+													<div class="property-price-rating">
+														<div class="property-price">
+																														<strong style="font-size: 26px;">
+																	990 €
+																</strong>  / mois <span style="font-size: 13px">(charges: 50 €)</span>
+																														
+														</div>
+														
+													</div>
+											</div>
+										</div>
+								
+										
+										
+									</div>
+									
+
+									
+									</div>
+												
+
+											</div>
+										
+										</li>
+									</div>
+								
+								<!-- PROPERTY 1 : end -->
+							
+									<!-- PROPERTY 1 : begin -->
+									<div class="col-sm-12 col-list-annonce">
+										<li class="property first-in-row odd">
+
+											<div class="row">
+												
+												<div class="col-sm-5">
+													<a onclick="viewAnnonce(3652)" class="property-thumb">
+														<img src="./details_files/photo_1.jpg" alt="">
+														<span class="overlay"><span><i class="fa fa-search"></i> Voir plus</span></span>
+													</a> 
+																									</div>
+
+												<div class="col-sm-6">
+													<div class="property-head">
+																																													<h3 class="property-title"><a onclick="viewAnnonce(3652)">Appartement - T2 / <span style="color:#D5096F">35m2</span></a></h3>
+																																														                                                <h5 class="property-location dateParution">Publié le 15/11 à 16h39</h5>
+			                                            													</div>
+													<div class="property-content">
+											
+                                           
+										<div class="row">
+											<div class="col-md-5">
+												 <h4 style="overflow: hidden;white-space: nowrap;text-overflow: ellipsis; width: 100%;color: #D5096F">Colombes 92700</h4>
+										                                            <h5 class="property-location">Bail nu / Colocation</h5>
+                                            										<br>
+												<!-- <h5 class="property-location" style="color:#D5096F">Surface : 35m2</h5> -->
+											<!-- <h5 class="property-location">A proximité : </h5> -->
+											</div>
+											<div class="col-md-6">
+												
+													<div class="property-price-rating">
+														<div class="property-price">
+																														<strong style="font-size: 26px;">
+																	780 €
+																</strong>  / mois <span style="font-size: 13px">(charges: 140 €)</span>
+																														
+														</div>
+														
+													</div>
+											</div>
+										</div>
+								
+										
+										
+									</div>
+									
+
+									
+									</div>
+												
+
+											</div>
+										
+										</li>
+									</div>
+								
+								<!-- PROPERTY 1 : end -->
+							
+									<!-- PROPERTY 1 : begin -->
+									<div class="col-sm-12 col-list-annonce">
+										<li class="property first-in-row odd">
+
+											<div class="row">
+												
+												<div class="col-sm-5">
+													<a onclick="viewAnnonce(3651)" class="property-thumb">
+														<img src="./details_files/photo_1(1).png" alt="">
+														<span class="overlay"><span><i class="fa fa-search"></i> Voir plus</span></span>
+													</a> 
+																									</div>
+
+												<div class="col-sm-6">
+													<div class="property-head">
+																																													<h3 class="property-title"><a onclick="viewAnnonce(3651)">Appartement - T3 / <span style="color:#D5096F">25m2</span></a></h3>
+																																														                                                <h5 class="property-location dateParution">Publié le 15/11 à 16h37</h5>
+			                                            													</div>
+													<div class="property-content">
+											
+                                           
+										<div class="row">
+											<div class="col-md-5">
+												 <h4 style="overflow: hidden;white-space: nowrap;text-overflow: ellipsis; width: 100%;color: #D5096F">Paris 75017</h4>
+										                                            <h5 class="property-location">Bail nu</h5>
+                                            										<br>
+												<!-- <h5 class="property-location" style="color:#D5096F">Surface : 25m2</h5> -->
+											<!-- <h5 class="property-location">A proximité : </h5> -->
+											</div>
+											<div class="col-md-6">
+												
+													<div class="property-price-rating">
+														<div class="property-price">
+																														<strong style="font-size: 26px;">
+																	890 €
+																</strong>  / mois <span style="font-size: 13px">(charges: 60 €)</span>
+																														
+														</div>
+														
+													</div>
+											</div>
+										</div>
+								
+										
+										
+									</div>
+									
+
+									
+									</div>
+												
+
+											</div>
+										
+										</li>
+									</div>
+								
+								<!-- PROPERTY 1 : end -->
+							
+									<!-- PROPERTY 1 : begin -->
+									<div class="col-sm-12 col-list-annonce">
+										<li class="property first-in-row odd">
+
+											<div class="row">
+												
+												<div class="col-sm-5">
+													<a onclick="viewAnnonce(3650)" class="property-thumb">
+														<img src="./details_files/photo_1(2).png" alt="">
+														<span class="overlay"><span><i class="fa fa-search"></i> Voir plus</span></span>
+													</a> 
+																									</div>
+
+												<div class="col-sm-6">
+													<div class="property-head">
+																																													<h3 class="property-title"><a onclick="viewAnnonce(3650)">Appartement - T3 / <span style="color:#D5096F">65m2</span></a></h3>
+																																														                                                <h5 class="property-location dateParution">Publié le 15/11 à 16h30</h5>
+			                                            													</div>
+													<div class="property-content">
+											
+                                           
+										<div class="row">
+											<div class="col-md-5">
+												 <h4 style="overflow: hidden;white-space: nowrap;text-overflow: ellipsis; width: 100%;color: #D5096F">Le Havre 76600</h4>
+										                                            <h5 class="property-location">Bail nu</h5>
+                                            										<br>
+												<!-- <h5 class="property-location" style="color:#D5096F">Surface : 65m2</h5> -->
+											<!-- <h5 class="property-location">A proximité : </h5> -->
+											</div>
+											<div class="col-md-6">
+												
+													<div class="property-price-rating">
+														<div class="property-price">
+																														<strong style="font-size: 26px;">
+																	530 €
+																</strong>  / mois <span style="font-size: 13px">(charges: 60 €)</span>
+																														
+														</div>
+														
+													</div>
+											</div>
+										</div>
+								
+										
+										
+									</div>
+									
+
+									
+									</div>
+												
+
+											</div>
+										
+										</li>
+									</div>
+								
+								<!-- PROPERTY 1 : end -->
+							
+									<!-- PROPERTY 1 : begin -->
+									<div class="col-sm-12 col-list-annonce">
+										<li class="property first-in-row odd">
+
+											<div class="row">
+												
+												<div class="col-sm-5">
+													<a onclick="viewAnnonce(3649)" class="property-thumb">
+														<img src="./details_files/photo_1(3).jpg" alt="">
+														<span class="overlay"><span><i class="fa fa-search"></i> Voir plus</span></span>
+													</a> 
+																									</div>
+
+												<div class="col-sm-6">
+													<div class="property-head">
+																																													<h3 class="property-title"><a onclick="viewAnnonce(3649)">Appartement - T2 / <span style="color:#D5096F">38m2</span></a></h3>
+																																														                                                <h5 class="property-location dateParution">Publié le 15/11 à 16h29</h5>
+			                                            													</div>
+													<div class="property-content">
+											
+                                           
+										<div class="row">
+											<div class="col-md-5">
+												 <h4 style="overflow: hidden;white-space: nowrap;text-overflow: ellipsis; width: 100%;color: #D5096F">Clichy 92110</h4>
+										                                            <h5 class="property-location">Bail nu</h5>
+                                            										<br>
+												<!-- <h5 class="property-location" style="color:#D5096F">Surface : 38m2</h5> -->
+											<!-- <h5 class="property-location">A proximité : </h5> -->
+											</div>
+											<div class="col-md-6">
+												
+													<div class="property-price-rating">
+														<div class="property-price">
+																														<strong style="font-size: 26px;">
+																	1020 €
+																</strong>  / mois <span style="font-size: 13px">(charges: 125 €)</span>
+																														
+														</div>
+														
+													</div>
+											</div>
+										</div>
+								
+										
+										
+									</div>
+									
+
+									
+									</div>
+												
+
+											</div>
+										
+										</li>
+									</div>
+								
+								<!-- PROPERTY 1 : end -->
+							
+									<!-- PROPERTY 1 : begin -->
+									<div class="col-sm-12 col-list-annonce">
+										<li class="property first-in-row odd">
+
+											<div class="row">
+												
+												<div class="col-sm-5">
+													<a onclick="viewAnnonce(3648)" class="property-thumb">
+														<img src="./details_files/photo_1(4).jpg" alt="">
+														<span class="overlay"><span><i class="fa fa-search"></i> Voir plus</span></span>
+													</a> 
+																									</div>
+
+												<div class="col-sm-6">
+													<div class="property-head">
+																																													<h3 class="property-title"><a onclick="viewAnnonce(3648)">Appartement - T2 / <span style="color:#D5096F">28m2</span></a></h3>
+																																														                                                <h5 class="property-location dateParution">Publié le 15/11 à 16h24</h5>
+			                                            													</div>
+													<div class="property-content">
+											
+                                           
+										<div class="row">
+											<div class="col-md-5">
+												 <h4 style="overflow: hidden;white-space: nowrap;text-overflow: ellipsis; width: 100%;color: #D5096F">Le Havre 76600</h4>
+																				<br>
+												<!-- <h5 class="property-location" style="color:#D5096F">Surface : 28m2</h5> -->
+											<!-- <h5 class="property-location">A proximité : </h5> -->
+											</div>
+											<div class="col-md-6">
+												
+													<div class="property-price-rating">
+														<div class="property-price">
+																														<strong style="font-size: 26px;">
+																	49500 €
+																</strong> <span style="font-size: 13px">(taxe foncière: 28€)</span>
+																														
+														</div>
+														
+													</div>
+											</div>
+										</div>
+								
+										
+										
+									</div>
+									
+
+									
+									</div>
+												
+
+											</div>
+										
+										</li>
+									</div>
+								
+								<!-- PROPERTY 1 : end -->
+							
+									<!-- PROPERTY 1 : begin -->
+									<div class="col-sm-12 col-list-annonce">
+										<li class="property first-in-row odd">
+
+											<div class="row">
+												
+												<div class="col-sm-5">
+													<a onclick="viewAnnonce(3647)" class="property-thumb">
+														<img src="./details_files/photo_1(5).png" alt="">
+														<span class="overlay"><span><i class="fa fa-search"></i> Voir plus</span></span>
+													</a> 
+																									</div>
+
+												<div class="col-sm-6">
+													<div class="property-head">
+																																													<h3 class="property-title"><a onclick="viewAnnonce(3647)">Appartement - T3 / <span style="color:#D5096F">60m2</span></a></h3>
+																																														                                                <h5 class="property-location dateParution">Publié le 15/11 à 16h22</h5>
+			                                            													</div>
+													<div class="property-content">
+											
+                                           
+										<div class="row">
+											<div class="col-md-5">
+												 <h4 style="overflow: hidden;white-space: nowrap;text-overflow: ellipsis; width: 100%;color: #D5096F">Alfortville 94140</h4>
+										                                            <h5 class="property-location">Bail nu</h5>
+                                            										<br>
+												<!-- <h5 class="property-location" style="color:#D5096F">Surface : 60m2</h5> -->
+											<!-- <h5 class="property-location">A proximité : </h5> -->
+											</div>
+											<div class="col-md-6">
+												
+													<div class="property-price-rating">
+														<div class="property-price">
+																														<strong style="font-size: 26px;">
+																	1100 €
+																</strong>  / mois <span style="font-size: 13px">(charges: 180 €)</span>
+																														
+														</div>
+														
+													</div>
+											</div>
+										</div>
+								
+										
+										
+									</div>
+									
+
+									
+									</div>
+												
+
+											</div>
+										
+										</li>
+									</div>
+								
+								<!-- PROPERTY 1 : end -->
+							
+									<!-- PROPERTY 1 : begin -->
+									<div class="col-sm-12 col-list-annonce">
+										<li class="property first-in-row odd">
+
+											<div class="row">
+												
+												<div class="col-sm-5">
+													<a onclick="viewAnnonce(3646)" class="property-thumb">
+														<img src="./details_files/photo_1(6).jpg" alt="">
+														<span class="overlay"><span><i class="fa fa-search"></i> Voir plus</span></span>
+													</a> 
+																									</div>
+
+												<div class="col-sm-6">
+													<div class="property-head">
+																																													<h3 class="property-title"><a onclick="viewAnnonce(3646)">Appartement - T4 / <span style="color:#D5096F">69m2</span></a></h3>
+																																														                                                <h5 class="property-location dateParution">Publié le 15/11 à 16h20</h5>
+			                                            													</div>
+													<div class="property-content">
+											
+                                           
+										<div class="row">
+											<div class="col-md-5">
+												 <h4 style="overflow: hidden;white-space: nowrap;text-overflow: ellipsis; width: 100%;color: #D5096F">Déville-lès-Rouen 76250</h4>
+																				<br>
+												<!-- <h5 class="property-location" style="color:#D5096F">Surface : 69m2</h5> -->
+											<!-- <h5 class="property-location">A proximité : </h5> -->
+											</div>
+											<div class="col-md-6">
+												
+													<div class="property-price-rating">
+														<div class="property-price">
+																														<strong style="font-size: 26px;">
+																	95000 €
+																</strong> <span style="font-size: 13px">(taxe foncière: 69€)</span>
+																														
+														</div>
+														
+													</div>
+											</div>
+										</div>
+								
+										
+										
+									</div>
+									
+
+									
+									</div>
+												
+
+											</div>
+										
+										</li>
+									</div>
+								
+								<!-- PROPERTY 1 : end -->
+							
+									<!-- PROPERTY 1 : begin -->
+									<div class="col-sm-12 col-list-annonce">
+										<li class="property first-in-row odd">
+
+											<div class="row">
+												
+												<div class="col-sm-5">
+													<a onclick="viewAnnonce(3644)" class="property-thumb">
+														<img src="./details_files/photo_1(7).jpg" alt="">
+														<span class="overlay"><span><i class="fa fa-search"></i> Voir plus</span></span>
+													</a> 
+																									</div>
+
+												<div class="col-sm-6">
+													<div class="property-head">
+																																													<h3 class="property-title"><a onclick="viewAnnonce(3644)">Appartement - T2 / <span style="color:#D5096F">43m2</span></a></h3>
+																																														                                                <h5 class="property-location dateParution">Publié le 15/11 à 16h12</h5>
+			                                            													</div>
+													<div class="property-content">
+											
+                                           
+										<div class="row">
+											<div class="col-md-5">
+												 <h4 style="overflow: hidden;white-space: nowrap;text-overflow: ellipsis; width: 100%;color: #D5096F">Sotteville-lès-Rouen 76300</h4>
+										                                            <h5 class="property-location">Bail nu</h5>
+                                            										<br>
+												<!-- <h5 class="property-location" style="color:#D5096F">Surface : 43m2</h5> -->
+											<!-- <h5 class="property-location">A proximité : </h5> -->
+											</div>
+											<div class="col-md-6">
+												
+													<div class="property-price-rating">
+														<div class="property-price">
+																														<strong style="font-size: 26px;">
+																	465 €
+																</strong>  / mois <span style="font-size: 13px">(charges: 30 €)</span>
+																														
+														</div>
+														
+													</div>
+											</div>
+										</div>
+								
+										
+										
+									</div>
+									
+
+									
+									</div>
+												
+
+											</div>
+										
+										</li>
+									</div>
+								
+								<!-- PROPERTY 1 : end -->
+							
+									<!-- PROPERTY 1 : begin -->
+									<div class="col-sm-12 col-list-annonce">
+										<li class="property first-in-row odd">
+
+											<div class="row">
+												
+												<div class="col-sm-5">
+													<a onclick="viewAnnonce(3643)" class="property-thumb">
+														<img src="./details_files/photo_1(8).jpg" alt="">
+														<span class="overlay"><span><i class="fa fa-search"></i> Voir plus</span></span>
+													</a> 
+																									</div>
+
+												<div class="col-sm-6">
+													<div class="property-head">
+																																													<h3 class="property-title"><a onclick="viewAnnonce(3643)">Appartement - T3 / <span style="color:#D5096F">56m2</span></a></h3>
+																																														                                                <h5 class="property-location dateParution">Publié le 15/11 à 16h09</h5>
+			                                            													</div>
+													<div class="property-content">
+											
+                                           
+										<div class="row">
+											<div class="col-md-5">
+												 <h4 style="overflow: hidden;white-space: nowrap;text-overflow: ellipsis; width: 100%;color: #D5096F">Bois-Colombes 92270</h4>
+																				<br>
+												<!-- <h5 class="property-location" style="color:#D5096F">Surface : 56m2</h5> -->
+											<!-- <h5 class="property-location">A proximité : </h5> -->
+											</div>
+											<div class="col-md-6">
+												
+													<div class="property-price-rating">
+														<div class="property-price">
+																														<strong style="font-size: 26px;">
+																	315000 €
+																</strong> <span style="font-size: 13px">(taxe foncière: 730€)</span>
+																														
+														</div>
+														
+													</div>
+											</div>
+										</div>
+								
+										
+										
+									</div>
+									
+
+									
+									</div>
+												
+
+											</div>
+										
+										</li>
+									</div>
+								
+								<!-- PROPERTY 1 : end -->
+							
+								
+
+						</ul>
+										<!-- PROPERTY LIST : end -->
+                        <div class="pagination"><p align="center"><a class="pagination"> &lt; </a><a class="pagination active">1</a><a class="pagination" href="https://lok-iz.com/index.php?action=rechercheAvancee&amp;page=2">2</a><a class="pagination" href="https://lok-iz.com/index.php?action=rechercheAvancee&amp;page=3">3</a><a class="pagination" href="https://lok-iz.com/index.php?action=rechercheAvancee&amp;page=4">4</a><a class="pagination" href="https://lok-iz.com/index.php?action=rechercheAvancee&amp;page=5">5</a><a class="pagination" href="https://lok-iz.com/index.php?action=rechercheAvancee&amp;page=6">6</a><a class="pagination" href="https://lok-iz.com/index.php?action=rechercheAvancee&amp;page=7">7</a><a class="pagination" href="https://lok-iz.com/index.php?action=rechercheAvancee&amp;page=8">8</a><a class="pagination" href="https://lok-iz.com/index.php?action=rechercheAvancee&amp;page=9">9</a><a class="pagination" href="https://lok-iz.com/index.php?action=rechercheAvancee&amp;page=10">10</a><a class="pagination" href="https://lok-iz.com/index.php?action=rechercheAvancee&amp;page=11">…</a><a class="pagination" href="https://lok-iz.com/index.php?action=rechercheAvancee&amp;page=2"> &gt; </a>
+</p></div>
+					<!-- PROPERTIES LISTING FOOTER : begin -->
+					<!-- <div class="properties-listing-footer clearfix">
+						<div class="default-form">
+							<span class="select-box links">
+								<select name="listing-pagination">
+																			<option value="index.php?action=rechercheAvancee&page=1" selected="selected">Page 1</option>
+																			<option value="index.php?action=rechercheAvancee&page=2" >Page 2</option>
+																			<option value="index.php?action=rechercheAvancee&page=3" >Page 3</option>
+																			<option value="index.php?action=rechercheAvancee&page=4" >Page 4</option>
+																			<option value="index.php?action=rechercheAvancee&page=5" >Page 5</option>
+																			<option value="index.php?action=rechercheAvancee&page=6" >Page 6</option>
+																			<option value="index.php?action=rechercheAvancee&page=7" >Page 7</option>
+																			<option value="index.php?action=rechercheAvancee&page=8" >Page 8</option>
+																			<option value="index.php?action=rechercheAvancee&page=9" >Page 9</option>
+																			<option value="index.php?action=rechercheAvancee&page=10" >Page 10</option>
+																			<option value="index.php?action=rechercheAvancee&page=11" >Page 11</option>
+																			<option value="index.php?action=rechercheAvancee&page=12" >Page 12</option>
+																			<option value="index.php?action=rechercheAvancee&page=13" >Page 13</option>
+																			<option value="index.php?action=rechercheAvancee&page=14" >Page 14</option>
+																			<option value="index.php?action=rechercheAvancee&page=15" >Page 15</option>
+																			<option value="index.php?action=rechercheAvancee&page=16" >Page 16</option>
+																			<option value="index.php?action=rechercheAvancee&page=17" >Page 17</option>
+																			<option value="index.php?action=rechercheAvancee&page=18" >Page 18</option>
+																			<option value="index.php?action=rechercheAvancee&page=19" >Page 19</option>
+																			<option value="index.php?action=rechercheAvancee&page=20" >Page 20</option>
+																			<option value="index.php?action=rechercheAvancee&page=21" >Page 21</option>
+																			<option value="index.php?action=rechercheAvancee&page=22" >Page 22</option>
+																			<option value="index.php?action=rechercheAvancee&page=23" >Page 23</option>
+																			<option value="index.php?action=rechercheAvancee&page=24" >Page 24</option>
+																			<option value="index.php?action=rechercheAvancee&page=25" >Page 25</option>
+																			<option value="index.php?action=rechercheAvancee&page=26" >Page 26</option>
+																			<option value="index.php?action=rechercheAvancee&page=27" >Page 27</option>
+																			<option value="index.php?action=rechercheAvancee&page=28" >Page 28</option>
+																			<option value="index.php?action=rechercheAvancee&page=29" >Page 29</option>
+																			<option value="index.php?action=rechercheAvancee&page=30" >Page 30</option>
+																			<option value="index.php?action=rechercheAvancee&page=31" >Page 31</option>
+																			<option value="index.php?action=rechercheAvancee&page=32" >Page 32</option>
+																			<option value="index.php?action=rechercheAvancee&page=33" >Page 33</option>
+																			<option value="index.php?action=rechercheAvancee&page=34" >Page 34</option>
+																			<option value="index.php?action=rechercheAvancee&page=35" >Page 35</option>
+																			<option value="index.php?action=rechercheAvancee&page=36" >Page 36</option>
+																			<option value="index.php?action=rechercheAvancee&page=37" >Page 37</option>
+																			<option value="index.php?action=rechercheAvancee&page=38" >Page 38</option>
+																			<option value="index.php?action=rechercheAvancee&page=39" >Page 39</option>
+																			<option value="index.php?action=rechercheAvancee&page=40" >Page 40</option>
+																			<option value="index.php?action=rechercheAvancee&page=41" >Page 41</option>
+																			<option value="index.php?action=rechercheAvancee&page=42" >Page 42</option>
+																			<option value="index.php?action=rechercheAvancee&page=43" >Page 43</option>
+																			<option value="index.php?action=rechercheAvancee&page=44" >Page 44</option>
+																			<option value="index.php?action=rechercheAvancee&page=45" >Page 45</option>
+																			<option value="index.php?action=rechercheAvancee&page=46" >Page 46</option>
+																			<option value="index.php?action=rechercheAvancee&page=47" >Page 47</option>
+																			<option value="index.php?action=rechercheAvancee&page=48" >Page 48</option>
+																			<option value="index.php?action=rechercheAvancee&page=49" >Page 49</option>
+																			<option value="index.php?action=rechercheAvancee&page=50" >Page 50</option>
+																			<option value="index.php?action=rechercheAvancee&page=51" >Page 51</option>
+																			<option value="index.php?action=rechercheAvancee&page=52" >Page 52</option>
+																			<option value="index.php?action=rechercheAvancee&page=53" >Page 53</option>
+																			<option value="index.php?action=rechercheAvancee&page=54" >Page 54</option>
+																			<option value="index.php?action=rechercheAvancee&page=55" >Page 55</option>
+																			<option value="index.php?action=rechercheAvancee&page=56" >Page 56</option>
+																			<option value="index.php?action=rechercheAvancee&page=57" >Page 57</option>
+																			<option value="index.php?action=rechercheAvancee&page=58" >Page 58</option>
+																			<option value="index.php?action=rechercheAvancee&page=59" >Page 59</option>
+																			<option value="index.php?action=rechercheAvancee&page=60" >Page 60</option>
+																			<option value="index.php?action=rechercheAvancee&page=61" >Page 61</option>
+																			<option value="index.php?action=rechercheAvancee&page=62" >Page 62</option>
+																			<option value="index.php?action=rechercheAvancee&page=63" >Page 63</option>
+																			<option value="index.php?action=rechercheAvancee&page=64" >Page 64</option>
+																			<option value="index.php?action=rechercheAvancee&page=65" >Page 65</option>
+																			<option value="index.php?action=rechercheAvancee&page=66" >Page 66</option>
+																			<option value="index.php?action=rechercheAvancee&page=67" >Page 67</option>
+																			<option value="index.php?action=rechercheAvancee&page=68" >Page 68</option>
+																			<option value="index.php?action=rechercheAvancee&page=69" >Page 69</option>
+																			<option value="index.php?action=rechercheAvancee&page=70" >Page 70</option>
+																			<option value="index.php?action=rechercheAvancee&page=71" >Page 71</option>
+																			<option value="index.php?action=rechercheAvancee&page=72" >Page 72</option>
+																			<option value="index.php?action=rechercheAvancee&page=73" >Page 73</option>
+																			<option value="index.php?action=rechercheAvancee&page=74" >Page 74</option>
+																			<option value="index.php?action=rechercheAvancee&page=75" >Page 75</option>
+																			<option value="index.php?action=rechercheAvancee&page=76" >Page 76</option>
+																			<option value="index.php?action=rechercheAvancee&page=77" >Page 77</option>
+																			<option value="index.php?action=rechercheAvancee&page=78" >Page 78</option>
+																			<option value="index.php?action=rechercheAvancee&page=79" >Page 79</option>
+																			<option value="index.php?action=rechercheAvancee&page=80" >Page 80</option>
+																			<option value="index.php?action=rechercheAvancee&page=81" >Page 81</option>
+																			<option value="index.php?action=rechercheAvancee&page=82" >Page 82</option>
+																			<option value="index.php?action=rechercheAvancee&page=83" >Page 83</option>
+																			<option value="index.php?action=rechercheAvancee&page=84" >Page 84</option>
+																			<option value="index.php?action=rechercheAvancee&page=85" >Page 85</option>
+																			<option value="index.php?action=rechercheAvancee&page=86" >Page 86</option>
+																			<option value="index.php?action=rechercheAvancee&page=87" >Page 87</option>
+																			<option value="index.php?action=rechercheAvancee&page=88" >Page 88</option>
+																			<option value="index.php?action=rechercheAvancee&page=89" >Page 89</option>
+																			<option value="index.php?action=rechercheAvancee&page=90" >Page 90</option>
+																			<option value="index.php?action=rechercheAvancee&page=91" >Page 91</option>
+																			<option value="index.php?action=rechercheAvancee&page=92" >Page 92</option>
+																			<option value="index.php?action=rechercheAvancee&page=93" >Page 93</option>
+																			<option value="index.php?action=rechercheAvancee&page=94" >Page 94</option>
+																			<option value="index.php?action=rechercheAvancee&page=95" >Page 95</option>
+																			<option value="index.php?action=rechercheAvancee&page=96" >Page 96</option>
+																			<option value="index.php?action=rechercheAvancee&page=97" >Page 97</option>
+																			<option value="index.php?action=rechercheAvancee&page=98" >Page 98</option>
+																			<option value="index.php?action=rechercheAvancee&page=99" >Page 99</option>
+																			<option value="index.php?action=rechercheAvancee&page=100" >Page 100</option>
+																			<option value="index.php?action=rechercheAvancee&page=101" >Page 101</option>
+																			<option value="index.php?action=rechercheAvancee&page=102" >Page 102</option>
+																			<option value="index.php?action=rechercheAvancee&page=103" >Page 103</option>
+																			<option value="index.php?action=rechercheAvancee&page=104" >Page 104</option>
+																			<option value="index.php?action=rechercheAvancee&page=105" >Page 105</option>
+																			<option value="index.php?action=rechercheAvancee&page=106" >Page 106</option>
+																			<option value="index.php?action=rechercheAvancee&page=107" >Page 107</option>
+																			<option value="index.php?action=rechercheAvancee&page=108" >Page 108</option>
+																			<option value="index.php?action=rechercheAvancee&page=109" >Page 109</option>
+																			<option value="index.php?action=rechercheAvancee&page=110" >Page 110</option>
+																			<option value="index.php?action=rechercheAvancee&page=111" >Page 111</option>
+																			<option value="index.php?action=rechercheAvancee&page=112" >Page 112</option>
+																			<option value="index.php?action=rechercheAvancee&page=113" >Page 113</option>
+																			<option value="index.php?action=rechercheAvancee&page=114" >Page 114</option>
+																			<option value="index.php?action=rechercheAvancee&page=115" >Page 115</option>
+																			<option value="index.php?action=rechercheAvancee&page=116" >Page 116</option>
+																			<option value="index.php?action=rechercheAvancee&page=117" >Page 117</option>
+																			<option value="index.php?action=rechercheAvancee&page=118" >Page 118</option>
+																			<option value="index.php?action=rechercheAvancee&page=119" >Page 119</option>
+																			<option value="index.php?action=rechercheAvancee&page=120" >Page 120</option>
+																			<option value="index.php?action=rechercheAvancee&page=121" >Page 121</option>
+																			<option value="index.php?action=rechercheAvancee&page=122" >Page 122</option>
+																			<option value="index.php?action=rechercheAvancee&page=123" >Page 123</option>
+																			<option value="index.php?action=rechercheAvancee&page=124" >Page 124</option>
+																			<option value="index.php?action=rechercheAvancee&page=125" >Page 125</option>
+																			<option value="index.php?action=rechercheAvancee&page=126" >Page 126</option>
+																			<option value="index.php?action=rechercheAvancee&page=127" >Page 127</option>
+																			<option value="index.php?action=rechercheAvancee&page=128" >Page 128</option>
+																			<option value="index.php?action=rechercheAvancee&page=129" >Page 129</option>
+																			<option value="index.php?action=rechercheAvancee&page=130" >Page 130</option>
+																			<option value="index.php?action=rechercheAvancee&page=131" >Page 131</option>
+																			<option value="index.php?action=rechercheAvancee&page=132" >Page 132</option>
+																			<option value="index.php?action=rechercheAvancee&page=133" >Page 133</option>
+																			<option value="index.php?action=rechercheAvancee&page=134" >Page 134</option>
+																			<option value="index.php?action=rechercheAvancee&page=135" >Page 135</option>
+																			<option value="index.php?action=rechercheAvancee&page=136" >Page 136</option>
+																			<option value="index.php?action=rechercheAvancee&page=137" >Page 137</option>
+																			<option value="index.php?action=rechercheAvancee&page=138" >Page 138</option>
+																			<option value="index.php?action=rechercheAvancee&page=139" >Page 139</option>
+																			<option value="index.php?action=rechercheAvancee&page=140" >Page 140</option>
+																			<option value="index.php?action=rechercheAvancee&page=141" >Page 141</option>
+																			<option value="index.php?action=rechercheAvancee&page=142" >Page 142</option>
+																			<option value="index.php?action=rechercheAvancee&page=143" >Page 143</option>
+																			<option value="index.php?action=rechercheAvancee&page=144" >Page 144</option>
+																			<option value="index.php?action=rechercheAvancee&page=145" >Page 145</option>
+																			<option value="index.php?action=rechercheAvancee&page=146" >Page 146</option>
+																			<option value="index.php?action=rechercheAvancee&page=147" >Page 147</option>
+																			<option value="index.php?action=rechercheAvancee&page=148" >Page 148</option>
+																			<option value="index.php?action=rechercheAvancee&page=149" >Page 149</option>
+																			<option value="index.php?action=rechercheAvancee&page=150" >Page 150</option>
+																			<option value="index.php?action=rechercheAvancee&page=151" >Page 151</option>
+																			<option value="index.php?action=rechercheAvancee&page=152" >Page 152</option>
+																			<option value="index.php?action=rechercheAvancee&page=153" >Page 153</option>
+																			<option value="index.php?action=rechercheAvancee&page=154" >Page 154</option>
+																			<option value="index.php?action=rechercheAvancee&page=155" >Page 155</option>
+																			<option value="index.php?action=rechercheAvancee&page=156" >Page 156</option>
+																			<option value="index.php?action=rechercheAvancee&page=157" >Page 157</option>
+																			<option value="index.php?action=rechercheAvancee&page=158" >Page 158</option>
+																			<option value="index.php?action=rechercheAvancee&page=159" >Page 159</option>
+																			<option value="index.php?action=rechercheAvancee&page=160" >Page 160</option>
+																			<option value="index.php?action=rechercheAvancee&page=161" >Page 161</option>
+																			<option value="index.php?action=rechercheAvancee&page=162" >Page 162</option>
+																			<option value="index.php?action=rechercheAvancee&page=163" >Page 163</option>
+																			<option value="index.php?action=rechercheAvancee&page=164" >Page 164</option>
+																			<option value="index.php?action=rechercheAvancee&page=165" >Page 165</option>
+																			<option value="index.php?action=rechercheAvancee&page=166" >Page 166</option>
+																			<option value="index.php?action=rechercheAvancee&page=167" >Page 167</option>
+																			<option value="index.php?action=rechercheAvancee&page=168" >Page 168</option>
+																			<option value="index.php?action=rechercheAvancee&page=169" >Page 169</option>
+																			<option value="index.php?action=rechercheAvancee&page=170" >Page 170</option>
+																			<option value="index.php?action=rechercheAvancee&page=171" >Page 171</option>
+																			<option value="index.php?action=rechercheAvancee&page=172" >Page 172</option>
+																			<option value="index.php?action=rechercheAvancee&page=173" >Page 173</option>
+																			<option value="index.php?action=rechercheAvancee&page=174" >Page 174</option>
+																			<option value="index.php?action=rechercheAvancee&page=175" >Page 175</option>
+																			<option value="index.php?action=rechercheAvancee&page=176" >Page 176</option>
+																			<option value="index.php?action=rechercheAvancee&page=177" >Page 177</option>
+																			<option value="index.php?action=rechercheAvancee&page=178" >Page 178</option>
+																			<option value="index.php?action=rechercheAvancee&page=179" >Page 179</option>
+																			<option value="index.php?action=rechercheAvancee&page=180" >Page 180</option>
+																			<option value="index.php?action=rechercheAvancee&page=181" >Page 181</option>
+																			<option value="index.php?action=rechercheAvancee&page=182" >Page 182</option>
+																			<option value="index.php?action=rechercheAvancee&page=183" >Page 183</option>
+																			<option value="index.php?action=rechercheAvancee&page=184" >Page 184</option>
+																			<option value="index.php?action=rechercheAvancee&page=185" >Page 185</option>
+																			<option value="index.php?action=rechercheAvancee&page=186" >Page 186</option>
+																			<option value="index.php?action=rechercheAvancee&page=187" >Page 187</option>
+																			<option value="index.php?action=rechercheAvancee&page=188" >Page 188</option>
+																			<option value="index.php?action=rechercheAvancee&page=189" >Page 189</option>
+																			<option value="index.php?action=rechercheAvancee&page=190" >Page 190</option>
+																			<option value="index.php?action=rechercheAvancee&page=191" >Page 191</option>
+																			<option value="index.php?action=rechercheAvancee&page=192" >Page 192</option>
+																			<option value="index.php?action=rechercheAvancee&page=193" >Page 193</option>
+																			<option value="index.php?action=rechercheAvancee&page=194" >Page 194</option>
+																			<option value="index.php?action=rechercheAvancee&page=195" >Page 195</option>
+																			<option value="index.php?action=rechercheAvancee&page=196" >Page 196</option>
+																			<option value="index.php?action=rechercheAvancee&page=197" >Page 197</option>
+																			<option value="index.php?action=rechercheAvancee&page=198" >Page 198</option>
+																			<option value="index.php?action=rechercheAvancee&page=199" >Page 199</option>
+																			<option value="index.php?action=rechercheAvancee&page=200" >Page 200</option>
+																			<option value="index.php?action=rechercheAvancee&page=201" >Page 201</option>
+																			<option value="index.php?action=rechercheAvancee&page=202" >Page 202</option>
+																			<option value="index.php?action=rechercheAvancee&page=203" >Page 203</option>
+																			<option value="index.php?action=rechercheAvancee&page=204" >Page 204</option>
+																			<option value="index.php?action=rechercheAvancee&page=205" >Page 205</option>
+																			<option value="index.php?action=rechercheAvancee&page=206" >Page 206</option>
+																			<option value="index.php?action=rechercheAvancee&page=207" >Page 207</option>
+																			<option value="index.php?action=rechercheAvancee&page=208" >Page 208</option>
+																			<option value="index.php?action=rechercheAvancee&page=209" >Page 209</option>
+																			<option value="index.php?action=rechercheAvancee&page=210" >Page 210</option>
+																			<option value="index.php?action=rechercheAvancee&page=211" >Page 211</option>
+																			<option value="index.php?action=rechercheAvancee&page=212" >Page 212</option>
+																			<option value="index.php?action=rechercheAvancee&page=213" >Page 213</option>
+																			<option value="index.php?action=rechercheAvancee&page=214" >Page 214</option>
+																			<option value="index.php?action=rechercheAvancee&page=215" >Page 215</option>
+																			<option value="index.php?action=rechercheAvancee&page=216" >Page 216</option>
+																			<option value="index.php?action=rechercheAvancee&page=217" >Page 217</option>
+																			<option value="index.php?action=rechercheAvancee&page=218" >Page 218</option>
+																			<option value="index.php?action=rechercheAvancee&page=219" >Page 219</option>
+																			<option value="index.php?action=rechercheAvancee&page=220" >Page 220</option>
+																			<option value="index.php?action=rechercheAvancee&page=221" >Page 221</option>
+																			<option value="index.php?action=rechercheAvancee&page=222" >Page 222</option>
+																			<option value="index.php?action=rechercheAvancee&page=223" >Page 223</option>
+																			<option value="index.php?action=rechercheAvancee&page=224" >Page 224</option>
+																			<option value="index.php?action=rechercheAvancee&page=225" >Page 225</option>
+																			<option value="index.php?action=rechercheAvancee&page=226" >Page 226</option>
+																			<option value="index.php?action=rechercheAvancee&page=227" >Page 227</option>
+																			<option value="index.php?action=rechercheAvancee&page=228" >Page 228</option>
+																			<option value="index.php?action=rechercheAvancee&page=229" >Page 229</option>
+																			<option value="index.php?action=rechercheAvancee&page=230" >Page 230</option>
+																			<option value="index.php?action=rechercheAvancee&page=231" >Page 231</option>
+																			<option value="index.php?action=rechercheAvancee&page=232" >Page 232</option>
+																			<option value="index.php?action=rechercheAvancee&page=233" >Page 233</option>
+																			<option value="index.php?action=rechercheAvancee&page=234" >Page 234</option>
+																			<option value="index.php?action=rechercheAvancee&page=235" >Page 235</option>
+																			<option value="index.php?action=rechercheAvancee&page=236" >Page 236</option>
+																			<option value="index.php?action=rechercheAvancee&page=237" >Page 237</option>
+																			<option value="index.php?action=rechercheAvancee&page=238" >Page 238</option>
+																			<option value="index.php?action=rechercheAvancee&page=239" >Page 239</option>
+																			<option value="index.php?action=rechercheAvancee&page=240" >Page 240</option>
+																			<option value="index.php?action=rechercheAvancee&page=241" >Page 241</option>
+																			<option value="index.php?action=rechercheAvancee&page=242" >Page 242</option>
+																			<option value="index.php?action=rechercheAvancee&page=243" >Page 243</option>
+																			<option value="index.php?action=rechercheAvancee&page=244" >Page 244</option>
+																			<option value="index.php?action=rechercheAvancee&page=245" >Page 245</option>
+																			<option value="index.php?action=rechercheAvancee&page=246" >Page 246</option>
+																			<option value="index.php?action=rechercheAvancee&page=247" >Page 247</option>
+																			<option value="index.php?action=rechercheAvancee&page=248" >Page 248</option>
+																			<option value="index.php?action=rechercheAvancee&page=249" >Page 249</option>
+																			<option value="index.php?action=rechercheAvancee&page=250" >Page 250</option>
+																			<option value="index.php?action=rechercheAvancee&page=251" >Page 251</option>
+																			<option value="index.php?action=rechercheAvancee&page=252" >Page 252</option>
+																			<option value="index.php?action=rechercheAvancee&page=253" >Page 253</option>
+																			<option value="index.php?action=rechercheAvancee&page=254" >Page 254</option>
+																			<option value="index.php?action=rechercheAvancee&page=255" >Page 255</option>
+																			<option value="index.php?action=rechercheAvancee&page=256" >Page 256</option>
+																			<option value="index.php?action=rechercheAvancee&page=257" >Page 257</option>
+																			<option value="index.php?action=rechercheAvancee&page=258" >Page 258</option>
+																			<option value="index.php?action=rechercheAvancee&page=259" >Page 259</option>
+																			<option value="index.php?action=rechercheAvancee&page=260" >Page 260</option>
+																			<option value="index.php?action=rechercheAvancee&page=261" >Page 261</option>
+																	</select>
+							</span>
+						</div>
+					</div> -->
+					<!-- PROPERTIES LISTING FOOTER : end -->
+
+				</div>
+				<!-- PROPERTIES LISTING : end -->
+
+			</div>
+
+	</div>
+</div>
+</div>
+</div>
+<!-- MAIN WRAPPER : end -->
+
+<!-- Modal Rech aff -->
+<div class="modal fade" id="modalRechAff" tabindex="-1" role="dialog" aria-labelledby="modalRechAff">
+<form class="default-form" action="https://lok-iz.com/index.php?action=rechercheAvancee" method="post" id="properties-search-form-swap">
+
+  <div class="modal-dialog" role="document">
+    <div class="modal-content properties-search-filter">
+
+      <div class="modal-header">
+        <button type="button" class="close close-modal-annonce" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        <h4 class="modal-title" id="myModalLabel">Recherche affinée</h4>
+      </div>
+      <div class="modal-body">
+        <!-- FORM SWAP : begin -->
+
+							<!-- SEARCH INPUT : begin -->
+								<p class="select-box"><input class="value-holder" type="text" disabled="disabled" placeholder="Tri par date"><i class="fa fa-chevron-down"></i><ul class="select-clone custom-list" style=""><li data-value="ANNONCE_id">Tri par date</li><li data-value="ANNONCE_prix">Tri par prix</li><li data-value="ANNONCE_surface">Tri par surface</li><li data-value="ANNONCE_nb_piece">Tri par nombre de pièce</li></ul>
+									<select name="typeTri">
+										<option value="ANNONCE_id">Tri par date</option>
+										<option value="ANNONCE_prix">Tri par prix</option>
+										<option value="ANNONCE_surface">Tri par surface</option>
+										<option value="ANNONCE_nb_piece">Tri par nombre de pièce</option>
+									</select>
+								</p>
+								<p class="select-box" style="display:none"><input class="value-holder" type="text" disabled="disabled" placeholder="Ordre croissant"><i class="fa fa-chevron-down"></i><ul class="select-clone custom-list" style=""><li data-value="ASC">Ordre croissant</li><li data-value="DESC">Ordre décroissant</li></ul>
+									<select name="ordreTri">
+										<option value="ASC">Ordre croissant</option>
+										<option value="DESC">Ordre décroissant</option>
+									</select>
+								</p>
+								<p class="search-input">
+									<input class="codePostal" type="text" name="codePostal" placeholder="Code postal" pattern="^[0-9]{5,5}$" value="">
+								</p>
+								<p class="select-box"><input class="value-holder" type="text" disabled="disabled" placeholder="Région"><i class="fa fa-chevron-down"></i><ul class="select-clone custom-list" style=""><li data-value="0">Région</li><li data-value="1">Alsace</li><li data-value="2">Aquitaine</li><li data-value="3">Auvergne</li><li data-value="4">Basse Normandie</li><li data-value="5">Bourgogne</li><li data-value="6">Bretagne</li><li data-value="7">Centre</li><li data-value="8">Champagne Ardenne</li><li data-value="9">Corse</li><li data-value="10">Franche Comte</li><li data-value="11">Haute Normandie</li><li data-value="12">Ile de France</li><li data-value="13">Languedoc Roussillon</li><li data-value="14">Limousin</li><li data-value="15">Lorraine</li><li data-value="16">Midi-Pyrénées</li><li data-value="17">Nord Pas de Calais</li><li data-value="18">Provence Alpes Côte d'Azur</li><li data-value="19">Pays de la Loire</li><li data-value="20">Picardie</li><li data-value="21">Poitou Charente</li><li data-value="22">Rhone Alpes</li></ul>
+									<select class="regions" name="idRegion" placeholder="Pas de région pour ce code postal !">
+										<option selected="" value="0">Région</option>
+																			<option value="1">Alsace</option><option value="2">Aquitaine</option><option value="3">Auvergne</option><option value="4">Basse Normandie</option><option value="5">Bourgogne</option><option value="6">Bretagne</option><option value="7">Centre</option><option value="8">Champagne Ardenne</option><option value="9">Corse</option><option value="10">Franche Comte</option><option value="11">Haute Normandie</option><option value="12">Ile de France</option><option value="13">Languedoc Roussillon</option><option value="14">Limousin</option><option value="15">Lorraine</option><option value="16">Midi-Pyrénées</option><option value="17">Nord Pas de Calais</option><option value="18">Provence Alpes Côte d'Azur</option><option value="19">Pays de la Loire</option><option value="20">Picardie</option><option value="21">Poitou Charente</option><option value="22">Rhone Alpes</option></select>
+									<input type="hidden" value="Région" name="regionName">
+								</p>
+								<p class="select-box"><input class="value-holder" type="text" disabled="disabled" placeholder="Département"><i class="fa fa-chevron-down"></i><ul class="select-clone custom-list" style=""><li data-value="0">Département</li></ul>
+									<select class="departements" name="idDepartement" placeholder="Pas de département pour ce code postal !">
+										<option value="0">Département</option>
+																			</select>
+									<input type="hidden" value="" name="departementName">
+								</p>
+								<p class="select-box"><input class="value-holder" type="text" disabled="disabled" placeholder="Ville"><i class="fa fa-chevron-down"></i><ul class="select-clone custom-list" style=""><li data-value="0">Ville</li></ul>
+									<select class="villes" name="idVille" placeholder="Pas de ville pour ce code postal !">
+										<option value="0">Ville</option>
+																			</select>
+									<input type="hidden" value="" name="villeName">
+								</p>
+						
+						<!-- ARRIVAL DATE, DEPARTURE DATE : end -->
+						<br>
+						<!-- PRICE FILTER : begin -->
+						<div class="price-filter toggle-container">
+							<h5 class="toggle-title">Prix</h5>
+							<div class="toggle-content">
+
+								<div class="slider-range-container">
+									<div class="slider-range ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" data-min="5" data-max="1000000" data-step="10" data-default-min="5" data-default-max="1000000" data-currency="€" aria-disabled="false"><div class="ui-slider-range ui-widget-header ui-corner-all" style="left: 0%; width: 100%;"></div><a class="ui-slider-handle ui-state-default ui-corner-all" href="https://lok-iz.com/index.php?action=rechercheSimple#" style="left: 0%;"></a><a class="ui-slider-handle ui-state-default ui-corner-all" href="https://lok-iz.com/index.php?action=rechercheSimple#" style="left: 100%;"></a></div>
+									<div class="clearfix">
+										<input name="prixMin" type="text" class="range-from">
+										<input name="prixMax" type="text" class="range-to">
+									</div>
+								</div>
+
+							</div>
+						</div>
+						<!-- PRICE FILTER : end -->
+
+						<!-- SURFACE FILTER : begin -->
+						<div class="price-filter toggle-container">
+							<h5 class="toggle-title">Surface</h5>
+							<div class="toggle-content">
+
+								<div class="slider-range-container">
+									<div class="slider-range ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" data-min="5" data-max="600" data-step="5" data-default-min="5" data-default-max="1000000" data-currency="m²" aria-disabled="false"><div class="ui-slider-range ui-widget-header ui-corner-all" style="left: 0%; width: 100%;"></div><a class="ui-slider-handle ui-state-default ui-corner-all" href="https://lok-iz.com/index.php?action=rechercheSimple#" style="left: 0%;"></a><a class="ui-slider-handle ui-state-default ui-corner-all" href="https://lok-iz.com/index.php?action=rechercheSimple#" style="left: 100%;"></a></div>
+									<div class="clearfix">
+										<input name="surfaceMin" type="text" class="range-from">
+										<input name="surfaceMax" type="text" class="range-to">
+									</div>
+								</div>
+
+							</div>
+						</div>
+						<!-- SURFACE FILTER : end -->
+
+						<!-- ROOM FILTER : begin -->
+						<div class="price-filter toggle-container">
+							<h5 class="toggle-title">Nombre de pièces</h5>
+							<div class="toggle-content">
+
+								<div class="slider-range-container">
+									<div class="slider-range ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" data-min="1" data-max="20" data-step="1" data-default-min="1" data-default-max="20" data-currency=" " aria-disabled="false"><div class="ui-slider-range ui-widget-header ui-corner-all" style="left: 0%; width: 100%;"></div><a class="ui-slider-handle ui-state-default ui-corner-all" href="https://lok-iz.com/index.php?action=rechercheSimple#" style="left: 0%;"></a><a class="ui-slider-handle ui-state-default ui-corner-all" href="https://lok-iz.com/index.php?action=rechercheSimple#" style="left: 100%;"></a></div>
+									<div class="clearfix">
+										<input name="nbPieceMin" type="text" class="range-from">
+										<input name="nbPieceMax" type="text" class="range-to">
+									</div>
+								</div>
+
+							</div>
+						</div>
+						<!-- ROOM FILTER : end -->
+
+
+					
+					<!-- FORM SWAP : begin -->
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="button submit-btn"><i class="fa fa-search"></i> Rechercher</button>
+      </div>
+      
+    </div>
+  </div>
+  </form>
+</div>
+
+
+
+</div>
+<!-- CORE : end -->
+<script>
+function viewAnnonce(idAnnonce){
+		
+		//$('#viewAnnonce').html('<div style="position: fixed; top: 45%; left: 40%">Chargement en cours</div>');
+		
+
+		setTimeout(function(){
+
+			var params = {};
+			$.post("./index.php?action=resultatAnnonceAjax&id="+idAnnonce,
+		    params,
+		    function(data, status){
+		    	
+				$.post("./Vue/vueResultatAjax.php",
+			    JSON.parse(data),
+			    function(data, status){
+			    	
+			    	//console.log('=== DATA ===', data);
+			    	$('#modalZoomAnnonce').modal('show');
+			    	$('#viewAnnonce').html(data);
+			    	
+			    });
+		    	
+		    });
+
+		}, 0);
+
+
+	}
+</script>
+
+<!-- END : VERSION FR -->
+
+
+<!-- MODAL ZOOM ANNONCE : start -->
+<div class="modal pop in" id="modalZoomAnnonce" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="overflow-y: scroll; display: block;">
+
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+	
+      
+      <div id="viewAnnonce" class="modal-body"><script>
+
+	function getTimeRemaining(endtime){
+	  var t = Date.parse(endtime) - Date.parse(new Date());
+	  
+	  var seconds = Math.floor( (t/1000) % 60 );
+	  var minutes = Math.floor( (t/1000/60) % 60 );
+	  var hours = Math.floor( (t/(1000*60*60)) % 24 );
+	  var days = Math.floor( t/(1000*60*60*24) );
+	  return {
+	    'total': t,
+	    'days': days,
+	    'hours': hours,
+	    'minutes': minutes,
+	    'seconds': seconds
+	  };
+	}
+
+</script>
+
+
+<!-- BEGIN : VERSION EN -->
+
+
+
+<!-- CONTENT SECTION : begin -->
+<section class="content-section">
+	<div class="tools-details">
+		<div class="page-header" style="background-color: #f3f3f3;">
+		<button type="button" class="close close-modal-annonce" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+			<div class="container">
+				<div class="page-header-inner">
+															<h1>T2 - Appartement</h1>
+									
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- CONTENT SECTION : end -->
+<!-- CORE : begin -->
+<div id="core" class="page-property-details" style="margin-bottom:-5%;">
+
+	<!-- MAIN WRAPPER : begin -->
+	<div class="main-wrapper-container">
+		<div class="container">
+			<div id="main-wrapper">
+
+
+				<div class="row">
+					<div class="col-md-8 col-md-push-4">
+
+						<!-- PROPERTY DETAILS : begin -->
+						<div class="property-details">
+
+							<!-- PROPERTY IMAGES : begin -->
+														<div class="property-images">
+								<div id="carousel-images" class="carousel slide" data-ride="carousel">
+								<div class="carousel-inner" role="listbox">
+									<div class="item active">
+									<div class="image"><img src="./details_files/photo_1.jpg" alt="Photos descriptives"></div>
+									</div>
+									
+									<div class="item"><div class="image"><img src="./details_files/photo_2.jpg" alt="Photos descriptives"></div></div>									<div class="item"><div class="image"><img src="./details_files/photo_3.jpg" alt="Photos descriptives"></div></div>								</div>
+								</div>
+								<div class="images-footer">
+									<div class="images-footer-inner">
+										<div class="image-description"></div>
+										<div class="image-counter"></div>
+									</div>
+									<button class="prev-btn" href="#carousel-images" role="button" data-slide="prev"><i class="fa fa-chevron-left"></i></button>
+									<button class="next-btn" href="#carousel-images" role="button" data-slide="next"><i class="fa fa-chevron-right"></i></button>
+								</div>
+							</div>
+							<!-- PROPERTY IMAGES : end -->
+
+							<div class="row">
+								<div class="col-md-8">
+
+									<!-- PROPERTY DESCRIPTION : begin -->
+									<div class="property-description">
+
+										<!-- USEFUL INFO : begin -->
+										<div class="useful-info">
+											<h4><a href="/search">Retour à la recherche</a></h4>
+											<h4>General information</h4>
+											<div class="row">
+												<div class="col-lg-12">
+													<table>
+													<input type="hidden" id="connected" value="">
+														<tbody><tr>
+															<td>Localisation</td>
+															<td class="textalign-right">Colombes - 92700</td>
+														</tr>
+																												<tr>
+															<td>Type de bien</td>
+																															<td class="textalign-right">Appartement</td>
+																													</tr>
+                                                                                                                														<tr>
+															<td>Type de bail</td>
+															<td class="textalign-right">Bail nu</td>
+														</tr>
+                                                                                                                                                                                                                                <tr>
+                                                            <td>Nombre de colocataires</td>
+                                                            <td class="textalign-right">1</td>
+                                                        </tr>
+                                                                                                                														<tr style="border-bottom:2px solid #d5096f;">
+															<td>État</td>
+															<td class="textalign-right">Bon état</td>
+														</tr>
+																																																								<tr>
+															<td>Surface</td>
+															<td class="textalign-right" style="color:#f1155a;">35m2</td>
+														</tr>
+                                                        														<tr>
+															<td>Superficie du séjour</td>
+															<td class="textalign-right">0m2</td>
+														</tr>
+														<tr style="border-bottom:2px solid #d5096f;">
+															<td>Cuisine</td>
+															<td class="textalign-right"></td>
+														</tr>
+														
+																																										                                                        <!--
+                                                        Safir "on enleve le parking du site internet" 23/09/2015 à 20h16
+														<tr style="border-bottom:2px solid #d5096f;">
+															<td>Parking</td>
+															<td class="textalign-right"></td>
+														</tr>
+														-->
+														
+														<tr>
+																																															<td>Loyer (hors charges)</td>
+																																														<td class="textalign-right" style="color:#f1155a;">780 €</td>
+														</tr>
+                                                        																												<tr>
+															<td>Loyer (avec charges)</td>
+															<td class="textalign-right">920 €</td>
+														</tr>
+														                                                        																												<tr style="border-top:2px solid #d5096f;">
+															<td>Chauffage</td>
+															<td class="textalign-right">Gaz de ville</td>
+														</tr>
+														<tr>
+															<td>Consommation énergétique</td>
+															<td class="textalign-right">D (151 à 230)</td>
+														</tr>
+														<tr>
+															<td>Emission de gaz à effet de serre</td>
+															<td class="textalign-right">D (21 à 35)</td>
+														</tr>
+																											</tbody></table>
+												</div>
+											</div>
+										</div>
+										<!-- USEFUL INFO : end -->
+
+									</div>
+									<!-- PROPERTY DESCRIPTION : end -->
+
+
+								</div>
+								<div class="col-md-4">
+
+									<!-- PROPERTY PANEL : begin -->
+									<div class="property-panel" style="text-align:center;">
+									
+										<!-- DESIRED DESTINATION : begin -->
+										<div class="panel-item">
+											<h1 class="panel-item-title" style="font-size:2em;">780 € <span style="font-size:0.5em;">HC</span></h1>
+											<p>Loyer mensuel </p>
+										</div>
+										<!-- DESIRED DESTINATION : end -->
+										
+										<!-- SWAP NOW : begin -->
+										<div class="panel-item swap-now">
+																																	<a href="https://lok-iz.com/index.php?action=reserverLogement&amp;id=3652" class="button">
+																								<i class="fa fa-envelope"></i> Envoyez votre dossier</a>
+																								
+																																	
+											<br>
+																					</div>
+
+
+										<div class="panel-item">
+											<p>Date de disponibilité : 15/11/2016</p>
+										</div>
+										<div class="panel-item" style="display:none;">
+											<p>Délai de réponse : 12h <i class="fa fa-clock-o"></i></p>
+										</div>
+
+										<div class="panel-item">
+											<p>Partager cette annonce : </p>
+											<iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-share-button twitter-share-button-rendered twitter-tweet-button" title="Twitter Tweet Button" src="./details_files/tweet_button.2dbd32894063b53338de1c1d4a747ea9.fr.html" style="position: static; visibility: visible; width: 71px; height: 20px;"></iframe>
+											<br>
+											<a style="margin-top:-14px;margin-bottom: 20px;" class="fb-share-button fb_iframe_widget" data-href="#" data-layout="button_count" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=681904965275407&amp;container_width=0&amp;href=https%3A%2F%2Flok-iz.com%2Findex.php%3Faction%3DrechercheSimple%23&amp;layout=button_count&amp;locale=fr_FR&amp;sdk=joey"><span style="vertical-align: bottom; width: 83px; height: 20px;"><iframe name="f215b3617878ea8" width="1000px" height="1000px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" title="fb:share_button Facebook Social Plugin" src="./details_files/share_button.html" style="border: none; visibility: visible; width: 83px; height: 20px;" class=""></iframe></span></a>
+										</div>
+
+										<div class="panel-item">
+										</div>
+										<!-- SWAP NOW : end -->
+
+									</div>
+									<!-- PROPERTY PANEL : end -->
+		
+
+								</div>
+							</div>
+
+						</div>
+						<!-- PROPERTY DETAILS : end -->
+
+					</div>
+
+					<div class="col-md-4 col-md-pull-8">
+
+						<!-- PROPERTY LOCATION DETAILS : begin -->
+						<aside class="property-location-details">
+							<h3 class="property-location-title">Localisation &amp; Détails</h3>
+
+							<!-- PROPERTY MAP : begin -->
+							<div class="property-map">
+								<!-- <iframe src="https://maps.google.com/maps?q=48.9181129,2.2526712999999745&amp;num=1&amp;ie=UTF8&amp;ll=48.9181129,2.2526712999999745&amp;spn=0.007843,0.013937&amp;t=m&amp;z=14&amp;output=embed&amp;iwloc=near"></iframe> -->
+								
+
+        						<div id="map_canvas" style="height: 400px; position: relative; overflow: hidden;"><div style="height: 100%; width: 100%; position: absolute; background-color: rgb(229, 227, 223);"><div class="gm-style" style="position: absolute; left: 0px; top: 0px; overflow: hidden; width: 100%; height: 100%; z-index: 0;"><div style="position: absolute; left: 0px; top: 0px; overflow: hidden; width: 100%; height: 100%; z-index: 0; cursor: url(&quot;https://maps.gstatic.com/mapfiles/openhand_8_8.cur&quot;) 8 8, default;"><div style="position: absolute; left: 0px; top: 0px; z-index: 1; width: 100%; transform-origin: 167px 28px 0px; transform: matrix(1, 0, 0, 1, 0, 0);"><div style="position: absolute; left: 0px; top: 0px; z-index: 100; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div aria-hidden="true" style="position: absolute; left: 0px; top: 0px; z-index: 1; visibility: inherit;"><div style="width: 256px; height: 256px; position: absolute; left: -121px; top: 44px;"></div><div style="width: 256px; height: 256px; position: absolute; left: 135px; top: 44px;"></div><div style="width: 256px; height: 256px; position: absolute; left: -121px; top: -212px;"></div><div style="width: 256px; height: 256px; position: absolute; left: -121px; top: 300px;"></div><div style="width: 256px; height: 256px; position: absolute; left: 135px; top: -212px;"></div><div style="width: 256px; height: 256px; position: absolute; left: 135px; top: 300px;"></div></div></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 101; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: 30;"><div aria-hidden="true" style="position: absolute; left: 0px; top: 0px; z-index: 1; visibility: inherit;"><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -121px; top: 44px;"><canvas width="512" height="512" draggable="false" style="width: 256px; height: 256px; -webkit-user-select: none; position: absolute; left: 0px; top: 0px;"></canvas></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 135px; top: 44px;"><canvas width="512" height="512" draggable="false" style="width: 256px; height: 256px; -webkit-user-select: none; position: absolute; left: 0px; top: 0px;"></canvas></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -121px; top: -212px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -121px; top: 300px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 135px; top: -212px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 135px; top: 300px;"></div></div></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 102; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 103; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: -1;"><div aria-hidden="true" style="position: absolute; left: 0px; top: 0px; z-index: 1; visibility: inherit;"><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -121px; top: 44px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 135px; top: 44px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -121px; top: -212px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -121px; top: 300px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 135px; top: -212px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 135px; top: 300px;"></div></div></div></div><div style="position: absolute; z-index: 0; left: 0px; top: 0px;"><div style="overflow: hidden; width: 297px; height: 400px;"><img src="./details_files/StaticMapService.GetMapImage" style="width: 297px; height: 400px;"></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div aria-hidden="true" style="position: absolute; left: 0px; top: 0px; z-index: 1; visibility: inherit;"><div style="position: absolute; left: -121px; top: 44px; transition: opacity 200ms ease-out;"><img src="./details_files/vt" draggable="false" alt="" style="width: 256px; height: 256px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: -121px; top: 300px; transition: opacity 200ms ease-out;"><img src="./details_files/vt(1)" draggable="false" alt="" style="width: 256px; height: 256px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 135px; top: 44px; transition: opacity 200ms ease-out;"><img src="./details_files/vt(2)" draggable="false" alt="" style="width: 256px; height: 256px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 135px; top: -212px; transition: opacity 200ms ease-out;"><img src="./details_files/vt(3)" draggable="false" alt="" style="width: 256px; height: 256px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 135px; top: 300px; transition: opacity 200ms ease-out;"><img src="./details_files/vt(4)" draggable="false" alt="" style="width: 256px; height: 256px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: -121px; top: -212px; transition: opacity 200ms ease-out;"><img src="./details_files/vt(5)" draggable="false" alt="" style="width: 256px; height: 256px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div></div></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 2; width: 100%; height: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 3; width: 100%; height: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 4; width: 100%; transform-origin: 167px 28px 0px; transform: matrix(1, 0, 0, 1, 0, 0);"><div style="position: absolute; left: 0px; top: 0px; z-index: 104; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 105; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 106; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 107; width: 100%;"><div style="z-index: -202; cursor: pointer; display: none;"><div style="width: 30px; height: 27px; overflow: hidden; position: absolute;"><img src="./details_files/undo_poly.png" draggable="false" style="position: absolute; left: 0px; top: 0px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none; width: 90px; height: 27px;"></div></div></div></div></div><div style="margin-left: 5px; margin-right: 5px; z-index: 1000000; position: absolute; left: 0px; bottom: 0px;"><a target="_blank" href="https://maps.google.com/maps?ll=48.918113,2.252757&amp;z=15&amp;t=m&amp;hl=fr-FR&amp;gl=US&amp;mapclient=apiv3" title="Cliquez ici pour afficher cette zone sur Google Maps" style="position: static; overflow: visible; float: none; display: inline;"><div style="width: 66px; height: 26px; cursor: pointer;"><img src="./details_files/google4_hdpi.png" draggable="false" style="position: absolute; left: 0px; top: 0px; width: 66px; height: 26px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px;"></div></a></div><div style="padding: 15px 21px; border: 1px solid rgb(171, 171, 171); font-family: Roboto, Arial, sans-serif; color: rgb(34, 34, 34); box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 16px; z-index: 10000002; display: none; width: 243px; height: 148px; position: absolute; left: 5px; top: 110px; background-color: white;"><div style="padding: 0px 0px 10px; font-size: 16px;">Données cartographiques</div><div style="font-size: 13px;">Données cartographiques ©2016 Google</div><div style="width: 13px; height: 13px; overflow: hidden; position: absolute; opacity: 0.7; right: 12px; top: 12px; z-index: 10000; cursor: pointer;"><img src="./details_files/mapcnt6.png" draggable="false" style="position: absolute; left: -2px; top: -336px; width: 59px; height: 492px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div></div><div class="gmnoprint" style="z-index: 1000001; position: absolute; right: 113px; bottom: 0px; width: 127px;"><div draggable="false" class="gm-style-cc" style="-webkit-user-select: none; height: 14px; line-height: 14px;"><div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;"><div style="width: 1px;"></div><div style="width: auto; height: 100%; margin-left: 1px; background-color: rgb(245, 245, 245);"></div></div><div style="position: relative; padding-right: 6px; padding-left: 6px; font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(68, 68, 68); white-space: nowrap; direction: ltr; text-align: right; vertical-align: middle; display: inline-block;"><a style="color: rgb(68, 68, 68); text-decoration: none; cursor: pointer;">Données cartographiques</a><span style="display: none;">Données cartographiques ©2016 Google</span></div></div></div><div class="gmnoscreen" style="position: absolute; right: 0px; bottom: 0px;"><div style="font-family: Roboto, Arial, sans-serif; font-size: 11px; color: rgb(68, 68, 68); direction: ltr; text-align: right; background-color: rgb(245, 245, 245);">Données cartographiques ©2016 Google</div></div><div class="gmnoprint gm-style-cc" draggable="false" style="z-index: 1000001; -webkit-user-select: none; height: 14px; line-height: 14px; position: absolute; right: 0px; bottom: 0px;"><div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;"><div style="width: 1px;"></div><div style="width: auto; height: 100%; margin-left: 1px; background-color: rgb(245, 245, 245);"></div></div><div style="position: relative; padding-right: 6px; padding-left: 6px; font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(68, 68, 68); white-space: nowrap; direction: ltr; text-align: right; vertical-align: middle; display: inline-block;"><a href="https://www.google.com/intl/fr-FR_US/help/terms_maps.html" target="_blank" style="text-decoration: none; cursor: pointer; color: rgb(68, 68, 68);">Conditions d'utilisation</a></div></div><div style="width: 25px; height: 25px; overflow: hidden; display: none; margin: 10px 14px; position: absolute; top: 0px; right: 0px;"><img src="./details_files/sv9.png" draggable="false" class="gm-fullscreen-control" style="position: absolute; left: -52px; top: -86px; width: 164px; height: 175px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px;"></div><div draggable="false" class="gm-style-cc" style="-webkit-user-select: none; height: 14px; line-height: 14px; display: none; position: absolute; right: 0px; bottom: 0px;"><div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;"><div style="width: 1px;"></div><div style="width: auto; height: 100%; margin-left: 1px; background-color: rgb(245, 245, 245);"></div></div><div style="position: relative; padding-right: 6px; padding-left: 6px; font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(68, 68, 68); white-space: nowrap; direction: ltr; text-align: right; vertical-align: middle; display: inline-block;"><a target="_new" title="Signaler à Google une erreur dans la carte routière ou les images" href="https://www.google.com/maps/@48.9181129,2.2527571,15z/data=!10m1!1e1!12b1?source=apiv3&amp;rapsrc=apiv3" style="font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(68, 68, 68); text-decoration: none; position: relative;">Signaler une erreur cartographique</a></div></div><div class="gmnoprint gm-bundled-control gm-bundled-control-on-bottom" draggable="false" controlwidth="28" controlheight="93" style="margin: 10px; -webkit-user-select: none; position: absolute; bottom: 107px; right: 28px;"><div class="gmnoprint" controlwidth="28" controlheight="55" style="position: absolute; left: 0px; top: 38px;"><div draggable="false" style="-webkit-user-select: none; box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px; border-radius: 2px; cursor: pointer; width: 28px; height: 55px; background-color: rgb(255, 255, 255);"><div title="Zoom avant" style="position: relative; width: 28px; height: 27px; left: 0px; top: 0px;"><div style="overflow: hidden; position: absolute; width: 15px; height: 15px; left: 7px; top: 6px;"><img src="./details_files/tmapctrl_hdpi.png" draggable="false" style="position: absolute; left: 0px; top: 0px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none; width: 120px; height: 54px;"></div></div><div style="position: relative; overflow: hidden; width: 67%; height: 1px; left: 16%; top: 0px; background-color: rgb(230, 230, 230);"></div><div title="Zoom arrière" style="position: relative; width: 28px; height: 27px; left: 0px; top: 0px;"><div style="overflow: hidden; position: absolute; width: 15px; height: 15px; left: 7px; top: 6px;"><img src="./details_files/tmapctrl_hdpi.png" draggable="false" style="position: absolute; left: 0px; top: -15px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none; width: 120px; height: 54px;"></div></div></div></div><div class="gm-svpc" controlwidth="28" controlheight="28" style="box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px; border-radius: 2px; width: 28px; height: 28px; cursor: url(&quot;https://maps.gstatic.com/mapfiles/openhand_8_8.cur&quot;) 8 8, default; position: absolute; left: 0px; top: 0px; background-color: rgb(255, 255, 255);"><div style="position: absolute; left: 1px; top: 1px;"></div><div style="position: absolute; left: 1px; top: 1px;"><div aria-label="Contrôle de Pegman dans Street View" style="width: 26px; height: 26px; overflow: hidden; position: absolute; left: 0px; top: 0px;"><img src="./details_files/cb_scout5_hdpi.png" draggable="false" style="position: absolute; left: -147px; top: -26px; width: 215px; height: 835px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div aria-label="Pegman est au-dessus de la carte." style="width: 26px; height: 26px; overflow: hidden; position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="./details_files/cb_scout5_hdpi.png" draggable="false" style="position: absolute; left: -147px; top: -52px; width: 215px; height: 835px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div aria-label="Contrôle de Pegman dans Street View" style="width: 26px; height: 26px; overflow: hidden; position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="./details_files/cb_scout5_hdpi.png" draggable="false" style="position: absolute; left: -147px; top: -78px; width: 215px; height: 835px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div></div></div><div class="gmnoprint" controlwidth="28" controlheight="0" style="display: none; position: absolute;"><div title="Faire pivoter le plan à 90°" style="width: 28px; height: 28px; overflow: hidden; position: absolute; border-radius: 2px; box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px; cursor: pointer; display: none; background-color: rgb(255, 255, 255);"><img src="./details_files/tmapctrl4_hdpi.png" draggable="false" style="position: absolute; left: -141px; top: 6px; width: 170px; height: 54px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div class="gm-tilt" style="width: 28px; height: 28px; overflow: hidden; position: absolute; border-radius: 2px; box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px; top: 0px; cursor: pointer; background-color: rgb(255, 255, 255);"><img src="./details_files/tmapctrl4_hdpi.png" draggable="false" style="position: absolute; left: -141px; top: -13px; width: 170px; height: 54px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div></div></div><div class="gmnoprint" style="margin: 10px; z-index: 0; position: absolute; cursor: pointer; left: 0px; top: 0px;"><div class="gm-style-mtc" style="float: left;"><div draggable="false" title="Afficher un plan de ville" style="direction: ltr; overflow: hidden; text-align: center; position: relative; color: rgb(0, 0, 0); font-family: Roboto, Arial, sans-serif; -webkit-user-select: none; font-size: 11px; padding: 8px; border-bottom-left-radius: 2px; border-top-left-radius: 2px; -webkit-background-clip: padding-box; box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px; min-width: 22px; font-weight: 500; background-color: rgb(255, 255, 255); background-clip: padding-box;">Plan</div><div style="z-index: -1; padding: 2px; border-bottom-left-radius: 2px; border-bottom-right-radius: 2px; box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px; position: absolute; left: 0px; top: 40px; text-align: left; display: none; background-color: white;"><div draggable="false" title="Afficher le relief sur la carte" style="color: rgb(0, 0, 0); font-family: Roboto, Arial, sans-serif; -webkit-user-select: none; font-size: 11px; padding: 6px 8px 6px 6px; direction: ltr; text-align: left; white-space: nowrap; background-color: rgb(255, 255, 255);"><span role="checkbox" style="box-sizing: border-box; position: relative; line-height: 0; font-size: 0px; margin: 0px 5px 0px 0px; display: inline-block; border: 1px solid rgb(198, 198, 198); border-radius: 1px; width: 13px; height: 13px; vertical-align: middle; background-color: rgb(255, 255, 255);"><div style="position: absolute; left: 1px; top: -2px; width: 13px; height: 11px; overflow: hidden; display: none;"><img src="./details_files/imgs8.png" draggable="false" style="position: absolute; left: -52px; top: -44px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none; width: 68px; height: 67px;"></div></span><label style="vertical-align: middle; cursor: pointer;">Relief</label></div></div></div><div class="gm-style-mtc" style="float: left;"><div draggable="false" title="Afficher les images satellite" style="direction: ltr; overflow: hidden; text-align: center; position: relative; color: rgb(86, 86, 86); font-family: Roboto, Arial, sans-serif; -webkit-user-select: none; font-size: 11px; padding: 8px; border-bottom-right-radius: 2px; border-top-right-radius: 2px; -webkit-background-clip: padding-box; box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px; border-left-width: 0px; min-width: 40px; background-color: rgb(255, 255, 255); background-clip: padding-box;">Satellite</div><div style="z-index: -1; padding: 2px; border-bottom-left-radius: 2px; border-bottom-right-radius: 2px; box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px; position: absolute; right: 0px; top: 40px; text-align: left; display: none; background-color: white;"><div draggable="false" title="Afficher les images satellite avec le nom des rues" style="color: rgb(0, 0, 0); font-family: Roboto, Arial, sans-serif; -webkit-user-select: none; font-size: 11px; padding: 6px 8px 6px 6px; direction: ltr; text-align: left; white-space: nowrap; background-color: rgb(255, 255, 255);"><span role="checkbox" style="box-sizing: border-box; position: relative; line-height: 0; font-size: 0px; margin: 0px 5px 0px 0px; display: inline-block; border: 1px solid rgb(198, 198, 198); border-radius: 1px; width: 13px; height: 13px; vertical-align: middle; background-color: rgb(255, 255, 255);"><div style="position: absolute; left: 1px; top: -2px; width: 13px; height: 11px; overflow: hidden;"><img src="./details_files/imgs8.png" draggable="false" style="position: absolute; left: -52px; top: -44px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none; width: 68px; height: 67px;"></div></span><label style="vertical-align: middle; cursor: pointer;">Légendes</label></div></div></div></div></div></div></div>
+								<a href="https://lok-iz.com/index.php?action=rechercheSimple#" class="map-btn"><i class="fa fa-search-plus"></i></a>
+							</div>
+							<!-- PROPERTY MAP : end -->
+
+							<!-- PROPERTY INFO : begin -->
+							<div class="property-info">
+								<h4 class="property-info-title">Détails</h4>
+
+								<!-- ACCOMODATION : begin -->
+																<div class="toggle-container property-accomodation">
+									<h5 class="toggle-title">Informations générales</h5>
+									<div class="toggle-content">
+
+										<ul class="custom-list">
+																					<li>Chambres <strong><span class="rose">1</span></strong></li>
+											<li>Nombre de pièces <strong><span class="rose">2</span></strong></li>
+																					<li>Étage <strong><span class="rose">4</span></strong></li>																					</ul>
+
+									</div>
+								</div>
+																<!-- ACCOMODATION : end -->
+
+								<!-- ADDITIONAL : begin -->
+																<div class="toggle-container property-additional">
+									<h5 class="toggle-title">Informations supplémentaires</h5>
+									<div class="toggle-content">
+
+										<ul class="custom-list check-list">
+																					<li>Ascenseur</li>
+																				</ul>
+
+									</div>
+								</div>
+																<!-- ADDITIONAL : end -->
+
+
+								<!-- ADDITIONAL : begin -->
+																<!-- ADDITIONAL : end -->
+
+								<!-- ADDITIONAL : begin -->
+																<div class="toggle-container property-additional">
+									<h5 class="toggle-title">Surface des chambres</h5>
+									<div class="toggle-content">
+
+										<ul class="custom-list">
+																					<li>Chambre 1 : <strong class="rose">15 m2</strong></li>
+																				</ul>
+
+									</div>
+								</div>
+																<!-- ADDITIONAL : end -->
+
+																<div class="toggle-container property-additional">
+								<h5 class="toggle-title">Plus d'informations</h5>
+								<div class="toggle-content">
+									<p>Dans immeuble année 1930, au 4 ème étage avec ascenseur, appartement 35 m2 comprenant entrée, cuisine équipée plaques électriques, four micro-onde, four électrique, frigidaire, 2 pièces : une chambre, un salon , salle de bain avec WC, petit dressing.
+Possibilité colocation.
+Proche commerces, 8 min à pied gare des Vallées, ligne bus 164 (arrêt Prague) au pied de l'immeuble.
+Une cave.
+Chauffage collectif. Immeuble avec digicode et concierge.
+Loyer mensuel : 780 € + forfait charges de140 € (comprenant eau et chauffage)
+contact : 0607733050 ou notre.email@gmail.com</p>
+									</div>
+								</div>
+								
+							</div>
+							<!-- PROPERTY INFO : end -->
+
+						</aside>
+						<!-- PROPERTY LOCATION DETAILS : end -->
+
+					</div>
+
+
+			<!-- QUESTIONS PUBLIQUES : begin -->
+			<div class="row">
+				<div style="margin-top:-5%;">
+					<div class="col-md-8 col-md-push-4">
+				<hr style="border-color:#f7f4f4;border-top:0;margin-top:-2%;margin-bottom:-5%;">
+						<div class="property-details">
+							<div class="row">
+								<div class="col-md-8">
+									<div class="property-description">
+										<div id="questionsPubliques" class="useful-info">
+											<h4>Questions Publiques</h4>
+											<div class="row">
+												<div class="col-lg-12">
+																									<p style="margin-top:20px;text-align:justify;">Il n'y a pas encore de question pour cette annonce.</p>
+																								<br>
+<br>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<br>
+								<div class="col-md-4">
+									<div class="property-panel" style="text-align:center;">
+										<h4>Votre Question</h4>
+																				<p style="text-align:justify;font-size:80%;">Pour poser une question il vous faut un compte Lok-iz. Veuillez vous inscrire ou vous connecter puis revenir sur ce formulaire.</p>
+										<p class="form-submit">
+											<a href="https://lok-iz.com/index.php?action=connexion" class="button">Connexion</a>
+											<a href="https://lok-iz.com/index.php?action=inscription" class="button">Inscription</a>
+										</p>
+																			</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-4 col-md-pull-8">
+						<aside class="property-location-details">
+						</aside>
+					</div>
+
+				</div>
+			</div>
+				<!-- QUESTIONS PUBLIQUES : end -->
+			</div>
+		</div>
+	</div>
+	<!-- MAIN WRAPPER : end -->
+<!-- Button trigger modal -->
+
+</div></div>
+
+<!-- MODAL COMMISSION : end -->
+
+
+
+	<!-- MODAL ZOOM IMG : start -->
+	<div class="modal pop" id="modalZoomImg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      
+	      <div class="modal-body">
+	        <img id="imgZoomed" src="https://lok-iz.com/index.php?action=rechercheSimple" alt="Image zoomé">
+	      </div>
+	      
+	    </div>
+	  </div>
+	</div>
+	<!-- MODAL ZOOM IMG : end -->
+
+<!-- CORE : end -->
+
+
+<!-- END : VERSION FR -->
+<script>
+$('#yourQuestionCount').html(500 + " caractères restants");
+$(document).ready(function() {
+
+	document.querySelector('#modalCom').innerHTML = `
+		<div class="modal-dialog" role="document">
+	    <div class="modal-content modal-content--com" style="background: transparent; box-shadow: none; border: 0px">
+	      <div class="modal-header text-center" style="border-bottom: 0px">
+	      <div style="width: 80%; height: 200px; padding: 45px 15px;background-color: #d5096f; margin: 0 auto; text-align: center;box-shadow: 0 5px 15px rgba(0,0,0,.5);">
+	      	<h3 style="color: white">Commission : <br/> €</h3>
+	      </div>
+	        <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> -->
+	        <!-- <h4 class="modal-title" id="myModalLabel"></h4 -->
+	      </div>
+	      <div class="modal-body" style="background-color: white;box-shadow: 0 5px 15px rgba(0,0,0,.5);">
+
+	      					<div style="text-align:center">
+	    			<a href="./index.php">Veuillez vous connecter ou vous inscrire pour pouvoir partager cette annonce.</a>
+	    		</div>
+	    		    	
+
+
+
+	      </div>
+	      <!-- <div class="modal-footer" style="border-top: 0px">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        <button type="button" class="btn btn-primary">Save changes</button>
+	      </div> -->
+	    </div>
+	    
+	  </div>
+	  <div id="modal--com-msg" style="display: none; text-align: center; font-size: 18px; color: white; position: fixed; top: 40%; left: 47%">
+	    </div>
+	</div>
+
+	`;
+
+
+	$("#yourQuestion").keyup(function(){
+		var str_length = 500-$("#yourQuestion").val().length;
+		$('#yourQuestionCount').html(str_length + " caractères restants");
+	});
+});
+$(function(){
+    $('#submit-btn-ask').on('click',function(){
+        $('#formQuestion').submit();
+    });
+    $('#submit-btn-answer').on('click',function(){
+        $('#formReponse').submit();
+    });
+});
+</script>
+
+<script>
+
+function zoomImg(param){
+	console.log(param.src);
+	document.querySelector('#imgZoomed').src = param.src;
+	$('#modalZoomImg').modal('show');
+}
+
+
+function sendCom(){
+
+	var params = {};
+	var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	params.email = document.querySelector('#emailCom').value;
+
+	if(!params.email || params.email.trim().length <= 0 || !re.test(params.email)){
+		document.querySelector('#emailCom').style.border = '1px solid red';
+		return false;
+	}
+
+	document.querySelector('#emailCom').style.border = '1px solid black';
+	document.querySelector('.modal-content--com').style.display = 'none';
+
+	document.querySelector('#modal--com-msg').style.display = 'block';
+	document.querySelector('#modal--com-msg').innerHTML = 'Chargement en cours...';
+
+
+	
+	params.annonceId = 3652	;
+	params.nbPiece = 2	;
+	params.typeId = 'Appartement';
+	params.localisation = 'Colombes - 92700';
+	params.comId = '';
+
+
+	$.post("./index.php?action=shareCom",
+    params,
+    function(data, status){
+    	console.log(data);
+    	console.log(status);
+    		$('#modalCom').modal('hide');
+			setTimeout(function(){
+				document.querySelector('.modal-content--com').style.display = 'block';
+				document.querySelector('#modal--com-msg').style.display = 'none';	
+				document.querySelector('#emailCom').value = '';
+			}, 500)
+    });
+
+	// setTimeout(function(){
+	// 	$('#modalCom').modal('hide');
+	// 	setTimeout(function(){
+	// 		document.querySelector('.modal-content--com').style.display = 'block';
+	// 		document.querySelector('#modal--com-msg').style.display = 'none';	
+	// 	}, 500)
+		
+	// }, 1000);
+}
+
+// document.getElementById('proprioNum').style.display = "none";
+// document.getElementById('nonNum').style.display = "none";
+function showNum() {
+	var connected = document.getElementById('connected').value;
+	if (connected==1) {
+		document.getElementById('proprioNum').style.display = "block"; 
+		document.getElementById('nonNum').style.display = "none"; 
+		document.getElementById('showNum').style.display = "none"; 
+	} else {
+		document.getElementById('proprioNum').style.display = "none"; 
+		document.getElementById('nonNum').style.display = "block"; 
+	}
+}
+</script>
+<script>
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.5&appId=681904965275407";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+        <script>
+        $(function(){
+        	var address ='Avenue Henri Barbusse, Colombes, France,92700';
+   			var geocoder = new google.maps.Geocoder();
+
+        	var Lat=48.9181129;
+        	var Lng=2.2526712999999745;
+            var mapOptions = {
+                zoom: 15,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            }
+            var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+
+
+
+		   geocoder.geocode({
+		      'address': address
+		   }, 
+		   function(results, status) {
+		      if(status == google.maps.GeocoderStatus.OK) {
+		      	/*
+		         new google.maps.Marker({
+		            position: results[0].geometry.location,
+		            map: map
+		         });*/
+		         map.setCenter(results[0].geometry.location);
+		         citymap={
+		         	center: results[0].geometry.location,
+		         	population: 5000
+		         }
+
+                var populationOptions = {
+                    strokeColor: '#FF0000',
+                    strokeOpacity: 0.8,
+                    strokeWeight: 2,
+                    fillColor: '#FF0000',
+                    fillOpacity: 0.35,
+                    map: map,
+                    center: citymap.center,
+                    radius: citymap.population / 20
+                };
+                var cityCircle = new google.maps.Circle(populationOptions);
+		      }
+		   });
+        });
+        </script></div>
+      
+    </div>
+  </div>
+</div>
+<!-- MODAL ZOOM ANNONCE : end -->
+
+
+<div class="modal fade" id="modalCom" tabindex="10" role="dialog" aria-labelledby="myModalLabel" style="z-index:10000">
+		<div class="modal-dialog" role="document">
+	    <div class="modal-content modal-content--com" style="background: transparent; box-shadow: none; border: 0px">
+	      <div class="modal-header text-center" style="border-bottom: 0px">
+	      <div style="width: 80%; height: 200px; padding: 45px 15px;background-color: #d5096f; margin: 0 auto; text-align: center;box-shadow: 0 5px 15px rgba(0,0,0,.5);">
+	      	<h3 style="color: white">Commission : <br> €</h3>
+	      </div>
+	        <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> -->
+	        <!-- <h4 class="modal-title" id="myModalLabel"></h4 -->
+	      </div>
+	      <div class="modal-body" style="background-color: white;box-shadow: 0 5px 15px rgba(0,0,0,.5);">
+
+	      					<div style="text-align:center">
+	    			<a href="https://lok-iz.com/index.php">Veuillez vous connecter ou vous inscrire pour pouvoir partager cette annonce.</a>
+	    		</div>
+	    		    	
+
+
+
+	      </div>
+	      <!-- <div class="modal-footer" style="border-top: 0px">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        <button type="button" class="btn btn-primary">Save changes</button>
+	      </div> -->
+	    </div>
+	    
+	  </div>
+	  <div id="modal--com-msg" style="display: none; text-align: center; font-size: 18px; color: white; position: fixed; top: 40%; left: 47%">
+	    </div>
+	
+
+	</div>
+
+<script src="./details_files/localisation.js" type="text/javascript"></script>
+<script type="text/javascript" src="./details_files/jwt-decode.min.js"></script>
+<!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&amp;key=AIzaSyAUzH4EUM98_-Eh68UHgxuG89aVdJ2dsF8"
+</script> -->
+
+<script src="./library/js/localisation.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+	$('#typeRecherche').on('change', function(){
+
+		if(this.value == 'Acheter'){
+			('#typeRecherche2').value = "Acheter"
+			$('#formLocation').css('display', 'none');
+			$('#formAchat').css('display', 'block');
+		}
+		else {
+			$('#formLocation').css('display', 'block');
+			$('#formAchat').css('display', 'none');	
+		}
+		
+	})
+
+	$('#typeRecherche2').on('change', function(){
+
+		if(this.value == 'Acheter'){
+			('#typeRecherche').value = "Acheter"
+			$('#formLocation').css('display', 'none');
+			$('#formAchat').css('display', 'block');
+		}
+		else {
+
+			('#typeRecherche').value = "Louer"
+			$('#formLocation').css('display', 'block');
+			$('#formAchat').css('display', 'none');	
+		}
+		
+	})
+
+	function initializeAutocomplete(id) {
+	  var element = document.getElementById(id);
+	  if (element) {
+	    var autocomplete = new google.maps.places.Autocomplete(element, { types: ['(regions)'] });
+	    google.maps.event.addListener(autocomplete, 'place_changed', onPlaceChanged);
+
+	  }
+	  
+	}
+
+	function onPlaceChanged() {
+  		var place = this.getPlace();  		
+  		var latlng = {lat: parseFloat(place.geometry.location.lat()), lng: parseFloat(place.geometry.location.lng())};
+  		var geocoder = new google.maps.Geocoder();
+		geocoder.geocode({
+		    'location': latlng
+		}, 
+
+		function(results, status) {
+			console.log('=== RESULTS MAP ===', results);
+		    if(status == google.maps.GeocoderStatus.OK) {
+		       //console.log(results[0].address_components[results[0].address_components.length - 1].short_name);
+		       var postCode = results[0].address_components[results[0].address_components.length - 1].short_name;
+		       var inputVal = document.querySelector('#googleAddress').value;
+		       var inputVal2 = document.querySelector('#googleAddress2').value;
+		       if(!inputVal.match(postCode)){
+		       	document.querySelector('#googleAddress').value += " " + postCode;	
+		       }
+
+		       if(!inputVal2.match(postCode)){
+		       	document.querySelector('#googleAddress2').value += " " + postCode;  	
+		       }
+		       
+		    }
+		});
+  	}
+
+	google.maps.event.addDomListener(window, 'load', function() {
+		initMap();
+	  initializeAutocomplete('googleAddress');
+	  initializeAutocomplete('googleAddress2');
+	});
+
+
+	$(function(){
+
+		$regions=$('.regions');
+		$codePostal=$('.codePostal');
+		$villes=$('.villes');
+		$departements=$('.departements');
+
+		if($codePostal.val()!=""){
+			$codePostal.trigger('change');
+		}
+
+		if($regions.val()!=0 && $departements.val()==0){
+			var val = $departements.val();
+			$regions.trigger('change');
+		}
+		if($departements.val()!=0 && $villes.val()==0){
+			var val = $villes.val();
+			$departements.trigger('change');
+		}
+
+	});
+
+
+
+
+
+function initMap(){
+	var mapOptions = {
+        zoom: 12,
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        scrollwheel: false
+    }
+
+	if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position){
+
+        	var centerMap = {};
+        	// centerMap.lng = position.coords.longitude;
+        	// centerMap.lat = position.coords.latitude;
+        	centerMap.lat = 49.443232;
+        	centerMap.lng = 1.099971;
+
+        	var map = new google.maps.Map(document.getElementById('map_search'), mapOptions);
+			var geocoder = new google.maps.Geocoder();
+			geocoder.geocode({
+			    'address': 'Paris'
+			}, 
+
+			function(results, status) {
+			    if(status == google.maps.GeocoderStatus.OK) {
+			        map.setCenter(centerMap);
+
+					var marker = new google.maps.Marker({
+						position: centerMap,
+						map: map,
+						title: 'Location'
+					});
+
+					
+					var url ='https://www.lok-iz.com/sources_app/queries/getGeoloc.php?longitude='+encodeURIComponent(49.443232)+'&latitude='+encodeURIComponent(1.099971)+'&distance=10000';
+
+					$.get( url, function( data ) {
+					  	
+						var data = JSON.parse(data).records;
+					    var results = [];
+					    var i = 0; 
+					    data.forEach(function(elem){
+					      results.push(jwt_decode(elem[i]));
+					      i++;
+					    });
+
+					    
+					    
+					    var markers = [];
+					    for(var i = 0; i < results.length; i++){
+
+					    	if(results[i].Verif == 1){
+					    		var pos = {};
+						    	pos.lat = parseFloat(results[i].Latitude);
+						    	pos.lng = parseFloat(results[i].Longitude);
+						    	markers[i] = new google.maps.Marker({
+						    		position: pos,
+									map: map,
+									id: results[i].IdAnnonce
+						    	});
+						    
+								with ({ mark: markers[i] }) {
+								    google.maps.event.addListener(mark, 'click', function() {  
+								        viewAnnonce(mark.id);
+								    });
+								}
+
+					    	}
+					    	
+
+					    }
+
+					    $("#map_loader").css('display', 'none');
+
+					})
+			    }
+			});
+        });
+    } else {
+        
+    }
+
+   }
+	
+    function scrollToResults (){
+    	$('html, body').animate({
+	        scrollTop: $("#results").offset().top
+	    }, 1000);
+   	};
+
+</script>
+
+
+<style>
+	#map_search, #map_loader {
+		transition: all 1s linear;
+	}
+</style>
+</div>
+    
+            <footer id="footer" class="footer">
+
+
+            <!--     <aside id="bottom-panel">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <center>
+                          <div class="widget about-widget">
+                            <div class="widget-content">
+                              <p><img src="Images/lokiz.png" alt="Lok-iz location immobilière"></p>
+                              <p style="margin-top:-1%;">Suivez-nous sur :<br>
+                                <a target="_blank" href="https://www.facebook.com/pages/Lokiz/385635594955990?fref=ts" style="margin-right:10%;"><img class="social" src="/library/img/social/plateforme-location-immobiliere-lokiz.png" alt="Lok-iz facebook location immobilière"></a>
+                                <a target="_blank" href="https://twitter.com/Lokiz_Fr" style="margin-right:10%;"><img class="social" src="/library/img/social/plateforme-location-immobiliere-lokiz-twitter.png" alt="Lok-iz twitter location immobilière"></a>
+                                <a target="_blank" href="https://www.youtube.com/channel/UCFxES9WVq8bDPzVgJW2Un-g"><img class="social" src="/library/img/social/plateforme-location-immobiliere-youtube.png" alt="Lok-iz youtube location immobilière"></a>
+                              </p>
+                            </div>
+                          </div>
+                        </center>
+                      </div>
+                      <div class="col-sm-3 liensUtiles">
+                        <div class="widget links-widget">
+                          <center>
+                            <h3 class="widget-title"><span>Liens utiles</span></h3>
+                          </center>
+                          <div class="widget-content">
+                            <div class="row">
+                              <div class="col-md-6">
+                                <ul class="custom-list">
+                                  <li><a href="index.php">Accueil</a></li>
+                                  <li><a href="index.php?action=about">&Agrave; propos</a></li>
+                                  <li><a href="http://blog.lok-iz.com/" target="_blank">Blog</a></li>
+                                </ul>
+                              </div>
+                            <center>
+                            <div class="col-md-6">
+                              <ul class="custom-list">
+                                <li><a href="index.php?action=contact">Nous contacter</a></li>
+                                <li><a href="index.php?action=mentions">Mentions</a></li>
+                              </ul>
+                            </div>
+                          </center>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </aside> -->
+            <div class="container" style="background-color:#241c1f;width:100%;">
+                <div class="row" style="width:75%; margin:auto;padding:15px;">
+                    <div class="col-sm-7">
+                        <p>Copyright 2016 © Lok-iz. Tous droits réservés. </p>
+
+                    </div>
+                    <div class="col-sm-5">
+                        <ul class="footer-social custom-list">
+                            <li><a target="_blank" href="https://www.facebook.com/pages/Lokiz/385635594955990" title="Facebook"><i class="fa fa-facebook-square"></i><span>Facebook</span></a></li>
+                            <li><a target="_blank" href="https://twitter.com/Lokiz_Fr" title="Twitter"><i class="fa fa-twitter-square"></i><span>Twitter</span></a></li>
+                            <li><a target="_blank" href="https://www.youtube.com/channel/UCFxES9WVq8bDPzVgJW2Un-g"><i class="fa fa-youtube-square"></i><span>Youtube</span></a></li>
+                            <li><a target="_blank" href="https://plus.google.com/118087718397753260232" rel="publisher"><i class="fa fa-google-plus-square"></i><span>Google+</span></a></li>
+                            <li><a href="https://lok-iz.com/index.php?action=mentions">Mentions</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        
+
+    <div class="modal fade" id="modalSignup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    <p>Vous souhaitez :</p>
+                    <br>
+                    <div class="panel-group" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab">
+                                <h4 class="panel-title">
+                                    <a href="https://lok-iz.com/index.php?action=inscriptionLocataire" style="display:block; margin: 5px">Trouver
+                                        votre logement</a>
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab">
+                                <h4 class="panel-title">
+                                    <a href="https://lok-iz.com/index.php?action=inscriptionProprietaire" style="display:block; margin: 5px">Poster une annonce immobilière</a>
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab">
+                                <h4 class="panel-title">
+                                    <a href="https://lok-iz.com/index.php?action=inscriptionParrain" style="display:block; margin: 5px">Gagner
+                                        des primes</a>
+                                </h4>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalDepAnnonce" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <form id="form0" class="default-form" method="post" name="pageForm" action="https://lok-iz.com/index.php?action=deposerAnnonce&amp;step=1">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                        <p>
+                            Vous êtes :
+                        </p>
+                        <br>
+                        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingOne">
+                                    <h4 class="panel-title">
+                                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="https://lok-iz.com/index.php?action=rechercheSimple#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                            Un particulier
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                                    <div class="panel-body">
+                                        <div id="formParticulier" class="row">
+                                            <div class="col-sm-12 text-center">
+                                                <p>
+                                                    Déposer une annonce :
+                                                </p>
+                                                <br>
+                                                <p class="default-form">
+                                                    <a class="button choixType" id="vente">Vente</a>
+                                                    <a class="button choixType" id="location">Location</a>
+                                                    <input id="annonceType" type="hidden" value="0" name="annonceType">
+                                                    <input id="accountType" type="hidden" value="" name="accountType">
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingTwo">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="https://lok-iz.com/index.php?action=rechercheSimple#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Un professionnel
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                            <div class="panel-body">
+                                <div id="formPro" class="row">
+                                    <div class="col-sm-12 text-center">
+                                        <p>
+                                            Déposer une annonce :
+                                        </p>
+                                        <br>
+                                        <p class="default-form">
+                                            <a class="button choixType" id="vente">Vente</a>
+                                            <a class="button choixType" id="location">Location</a>
+                                        </p>
+                                    </div>
+                                </div>
+                                <br>
+                                <hr>
+                                <br>
+                                <form id="form1" class="default-form" method="post" name="pageForm" action="https://lok-iz.com/index.php?action=deposerDemande&amp;step=1">
+                                    <div class="row">
+                                        <div class="col-sm-12 text-center">
+                                            <p>
+                                                Déposer une demande immobilière :
+                                            </p>
+                                            <br>
+                                            <p class="default-form">
+                                                <a id="btn-demande-vente" class="button choixTypeInversed">Vente</a>
+                                                <a id="btn-demande-location" class="button choixTypeInversed">Location</a>
+                                                <input id="annonceTypeDemande" type="hidden" value="0" name="annonceType">
+                                                <input id="accountTypePro" type="hidden" value="" name="accountTypePro">
+                                                <!-- <a class="button choixTypeInversed" id="btn-demande">Demande immobilière</a> -->
+
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div></form>
+
+
+            </div>
+        </div>
+        </div>
+        </div>
+        
+
+
+<script type="text/javascript">
+    $(function () {
+
+        $('#formParticulier a.button.choixType').on('click', function () {
+            $('#accountType').val('particulier');
+            if ($(this).text() == "Vente") {
+                $('#annonceType').val('1');
+                $('#vente').addClass('active');
+                $('#location').removeClass('active');
+            } else if ($(this).text() == "Location") {
+                $('#annonceType').val('0');
+                $('#location').addClass('active');
+                $('#vente').removeClass('active');
+            }
+            $('#form0').submit();
+        });
+
+        $('#formPro a.button.choixType').on('click', function () {
+            //alert('Cette fonctionnalité n\'est pas encore disponible.');
+            $('#accountType').val('pro');
+            if ($(this).text() == "Vente") {
+                $('#accountType').val('pro');
+                $('#annonceType').val('1');
+                $('#vente').addClass('active');
+                $('#location').removeClass('active');
+            } else if ($(this).text() == "Location") {
+                $('#accountType').val('pro');
+                $('#annonceType').val('0');
+                $('#location').addClass('active');
+                $('#vente').removeClass('active');
+            }
+            $('#form0').submit();
+        });
+
+        $('#btn-demande-vente').on('click', function () {
+            $('#accountTypePro').val('pro');
+            $('#annonceTypeDemande').val('2');
+            $('#form1').submit();
+        });
+
+        $('#btn-demande-location').on('click', function () {
+            $('#accountTypePro').val('pro');
+            $('#annonceTypeDemande').val('3');
+            $('#form1').submit();
+        });
+    });
+</script>
+
+<script src="./details_files/jquery.ba-outside-events.min.js" type="text/javascript"></script>
+<script src="./details_files/jquery.inview.min.js" type="text/javascript"></script>
+<script src="./details_files/owl.carousel.min.js" type="text/javascript"></script>
+<script src="./details_files/jquery.magnific-popup.min.js" type="text/javascript"></script>
+<script src="./details_files/jquery.tweet.min.js" type="text/javascript"></script>
+<script src="./details_files/scripts.js" type="text/javascript"></script>
+<script src="./details_files/modernizr.custom.min.js" type="text/javascript"></script>
+<script>
+
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+
+    ga('create', 'UA-66443867-1', 'auto');
+
+    ga('send', 'pageview');
+
+
+</script>
+
+
+<var id="media-query-breakpoint"><span></span></var><div class="modal-backdrop in"></div><div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./details_files/fTmIQU3LxvB.html" style="border: none;"></iframe></div></div></div></div>
+
+</template>
